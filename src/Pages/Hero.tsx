@@ -7,11 +7,15 @@ import GanOnDiamondImage from "../assets/hero4.png";
 import { Link } from 'react-router-dom';
 import Rquestbutton from "./Common/Rquestbutton";
 
+
+
+
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoSectionRef = useRef<HTMLDivElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const items = ["AEROSPACE", "TELECOMMUNICATION", "BIOMEDICAL", "DEFENSE"];
+ 
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -105,7 +109,6 @@ const HeroSection: React.FC = () => {
 
 <section className="min-h-screen bg-white px-4 md:px-8 lg:px-16 py-8 md:py-12">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
-    {/* Optics Card with Link */}
     <Link to="/optics" className="block">
       <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden group rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
         <img
@@ -113,31 +116,63 @@ const HeroSection: React.FC = () => {
           alt="Optics"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+        {/* <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
           <span className="text-white text-xl md:text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             Explore Optics
           </span>
-        </div>
+        </div> */}
+      </div>
+    </Link>
+  <Link to="/Quantum" className="block">
+      <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden group rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+        <img
+          src={QuantumImage}
+          alt="QuantumImage"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        {/* <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+          <span className="text-white text-xl md:text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Explore Optics
+          </span>
+        </div> */}
       </div>
     </Link>
 
-    {/* Other cards */}
-    {[QuantumImage, ThermalImage, GanOnDiamondImage].map(
-      (image, index) => (
-        <div
-          key={index + 1}
-          className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden group rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-        >
-          <img
-            src={image}
-            alt={`Grid ${index + 2}`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-        </div>
-      )
-    )}
+
+     <Link to="/Thermal" className="block">
+      <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden group rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+        <img
+          src={ThermalImage}
+          alt="ThermalImage"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        {/* <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+          <span className="text-white text-xl md:text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Explore Optics
+          </span>
+        </div> */}
+      </div>
+    </Link>
+
+      <Link to="/GanOnDiamond" className="block">
+      <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden group rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+        <img
+          src={GanOnDiamondImage}
+          alt="ThermalImage"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        {/* <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+          <span className="text-white text-xl md:text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Explore Optics
+          </span>
+        </div> */}
+      </div>
+    </Link>
+ 
   </div>
 </section>
+
+
       {/* Video Section with Auto-play */}
       <section
         ref={videoSectionRef}
