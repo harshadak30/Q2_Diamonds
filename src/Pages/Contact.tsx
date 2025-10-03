@@ -10,7 +10,6 @@ interface FormData {
 }
 
 const ContactUs: React.FC = () => {
-  const currentYear = new Date().getFullYear();
 
   const [formData, setFormData] = useState<FormData>({
     name: '',

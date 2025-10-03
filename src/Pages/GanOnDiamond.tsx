@@ -1,7 +1,5 @@
 import React from "react";
-import TransmissionChart from "../assets/TransmissionChart.png";
 import Rquestbutton from "./Common/Rquestbutton";
-import graph from "../assets/graph.png";
 import GanOnDiamondImage from "../assets/ganonDiamonds.png";
 import Ev from "../assets/EV.jpg"
 import RF from "../assets/RF.png"

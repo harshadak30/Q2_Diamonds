@@ -190,7 +190,7 @@ const HeroSection: React.FC = () => {
                   loop
                 >
                   <source
-                    src="/src/assets/Q2FINAL2024_1.mp4"
+                    src="/src/assets/Q2FINAL2024_2.mp4"
                     type="video/mp4"
                   />
                   Your browser does not support the video tag.

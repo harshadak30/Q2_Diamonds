@@ -6,7 +6,6 @@ import QuantumH from "../assets/Quantum - H copy.jpg";
 import OpticsH from "../assets/Optics - H copy.jpg";
 import ThermalH from "../assets/Thermal - H copy.jpg";
 const Division: React.FC = () => {
-    const currentYear = new Date().getFullYear();
 
     return (
         <div className="bg-white min-h-screen flex flex-col overflow-hidden">
