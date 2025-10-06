@@ -7,8 +7,13 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'serif': ['Galderglynn', 'serif'],
+      // fontFamily: {
+      //   'serif': ['Galderglynn', 'serif'],
+      // },
+
+       fontFamily: {
+        galderglynn: ['"Galderglynn Titling"', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
