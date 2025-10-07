@@ -24,48 +24,77 @@ const CustomCursor: React.FC = () => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       
-      // Check background color at cursor position
-      checkBackgroundColor(e.clientX, e.clientY);
-    };
-
-    // Check if element under cursor has white background or white image
-    const checkBackgroundColor = (x: number, y: number) => {
-      const element = document.elementFromPoint(x, y) as HTMLElement;
+      const element = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement;
       if (!element) return;
       
-      // Get computed background color
+      const computedStyle = window.getComputedStyle(element);
+      let shouldBeGolden = false;
+      
+      // First priority: Check text color for white text
+      const textColor = computedStyle.color;
+      if (textColor && isWhiteColor(textColor)) {
+        shouldBeGolden = true;
+      } else {
+        // Second priority: Check background and images
+        shouldBeGolden = checkBackgroundAndImages(e.clientX, e.clientY, element);
+      }
+      
+      setIsWhiteBg(shouldBeGolden);
+    };
+
+    // Check if color is white or light gray
+    const isWhiteColor = (color: string): boolean => {
+      if (!color) return false;
+      
+      // Direct white checks
+      if (color === 'rgb(255, 255, 255)' || 
+          color === '#ffffff' || 
+          color === '#fff' || 
+          color === 'white') {
+        return true;
+      }
+      
+      // Parse RGB/RGBA
+      const match = color.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+      if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        // Lowered threshold to include text-gray-300 and lighter grays (RGB > 180)
+        return r > 180 && g > 180 && b > 180;
+      }
+      
+      return false;
+    };
+
+    // Check background color and images
+    const checkBackgroundAndImages = (x: number, y: number, element: HTMLElement): boolean => {
       const bgColor = window.getComputedStyle(element).backgroundColor;
       
-      // Check if it's an image element
+      // Check white background
+      if (isWhiteColor(bgColor)) return true;
+      
+      // Check for white class
+      if (element.classList.contains('bg-white') || element.closest('.bg-white')) {
+        return true;
+      }
+      
+      // Check if it's an image
       const isImageElement = 
         element.tagName === 'IMG' || 
-        element.tagName === 'PICTURE' ||
         element.querySelector('img');
       
-      // Check if background is white (rgb(255, 255, 255) or #ffffff)
-      const isWhiteBackground = 
-        bgColor === 'rgb(255, 255, 255)' || 
-        bgColor === '#ffffff' ||
-        bgColor === '#fff' ||
-        // Handle rgba white
-        bgColor.startsWith('rgba(255, 255, 255') ||
-        // Handle other white variations
-        element.classList.contains('bg-white') ||
-        element.closest('.bg-white') !== null;
-
-      // Check for white images
-      let isWhiteImage = false;
       if (isImageElement) {
         const imgElement = element.tagName === 'IMG' 
           ? element as HTMLImageElement 
           : element.querySelector('img') as HTMLImageElement;
         
         if (imgElement) {
-          isWhiteImage = isImageMostlyWhite(imgElement, x, y);
+          return isImageMostlyWhite(imgElement, x, y);
         }
       }
-
-      setIsWhiteBg(isWhiteBackground || isWhiteImage);
+      
+      return false;
     };
 
     // Check if image is mostly white at cursor position
