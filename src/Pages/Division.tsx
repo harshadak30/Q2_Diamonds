@@ -5,6 +5,8 @@ import GanOnDiamond from "../assets/Gan on Diamond - H copy.jpg";
 import QuantumH from "../assets/Quantum - H copy.jpg";
 import OpticsH from "../assets/Optics - H copy.jpg";
 import ThermalH from "../assets/Thermal - H copy.jpg";
+import Requestbutton from "./Common/Rquestbutton";
+
 const Division: React.FC = () => {
 
     return (
@@ -23,8 +25,8 @@ const Division: React.FC = () => {
                 </div>
                
             </header> */}
-             <div className="bg-black containe text-center py-55">
-                    <h2 className="text-[#CDAE64] text-3xl md:text-6xl font-semibold tracking-widest">
+             <div className="bg-black text-center py-40 md:py-55 ">
+                    <h2 className="text-[#CDAE64] text-3xl  md:text-6xl font-semibold tracking-widest">
                         DIVISION
                     </h2>
                 </div>
@@ -33,7 +35,7 @@ const Division: React.FC = () => {
             <main className="flex-1">
                 {/* Circular Menu Section */}
                 <section className="">
-                    <div className="space-y-8 p-14">
+                    <div className="space-y-8 md:p-14 p-7 py-10 border-b-2 border-black">
                         {/* Image 1 */}
                         <div className="relative group">
                             <Link to="">
@@ -42,8 +44,8 @@ const Division: React.FC = () => {
                                     alt="GaN on Diamond"
                                     className="w-full rounded shadow-md"
                                 />
-                                <div className="absolute inset-0 flex items-center justify-end md:pr-64">
-                                    <h2 className="text-black md:text-4xl font-semibold tracking-widest transition-transform duration-300 group-hover:scale-105 group-hover:text-[#CDAE64]">
+                                <div className="absolute inset-0 flex items-center justify-end md:pr-10 lg:pr-64 pr-2 ">
+                                    <h2 className="text-black lg:text-4xl md:text-2xl text-sm lg:font-semibold md:tracking-[0.25em] tracking-[0.20em] transition-transform duration-300 group-hover:scale-105 group-hover:text-[#CDAE64]">
                                         GaN ON DIAMOND
                                     </h2>
                                 </div>
@@ -59,8 +61,8 @@ const Division: React.FC = () => {
                                     alt="Quantum"
                                     className="w-full rounded shadow-md"
                                 />
-                                <div className="absolute inset-0 flex items-center justify-start md:pl-64">
-                                    <h2 className="text-black md:text-4xl font-semibold tracking-widest transition-transform duration-300 group-hover:scale-105 group-hover:text-[#CDAE64]">
+                                <div className="absolute inset-0 flex items-center justify-start lg:pl-64 md:pl-10 pl-6">
+                                    <h2 className="text-black lg:text-4xl md:text-2xl text-sm lg:font-semibold lg:tracking-[0.25em] tracking-[0.20em] transition-transform duration-300 group-hover:scale-105 group-hover:text-[#CDAE64]">
                                         QUANTUM
                                     </h2>
                                 </div>
@@ -75,8 +77,8 @@ const Division: React.FC = () => {
                                     alt="Optics"
                                     className="w-full rounded shadow-md"
                                 />
-                               <div className="absolute inset-0 flex items-center justify-end md:pr-[450px]">
-                                    <h2 className="text-black md:text-4xl font-semibold tracking-widest transition-transform duration-300 group-hover:scale-105 group-hover:text-[#CDAE64]">
+                               <div className="absolute inset-0 flex items-center justify-end md:pr-10 lg:pr-64 pr-10">
+                                    <h2 className="text-black lg:text-4xl md:text-2xl text-sm lg:font-semibold md:tracking-[0.25em] tracking-[0.20em]  transition-transform duration-300 group-hover:scale-105 group-hover:text-[#CDAE64]">
                                         OPTICS
                                     </h2>
                                 </div>
@@ -91,28 +93,17 @@ const Division: React.FC = () => {
                                     alt="Thermal"
                                     className="w-full rounded shadow-md "
                                 />
-                                 <div className="absolute inset-0 flex items-center justify-start md:pl-64">
-                                    <h2 className="text-black md:text-4xl font-semibold tracking-widest transition-transform duration-300 group-hover:scale-105 group-hover:text-[#CDAE64]">
+                                 <div className="absolute inset-0 flex items-center justify-start lg:pl-64 md:pl-10 pl-6">
+                                    <h2 className="text-black lg:text-4xl md:text-2xl text-sm lg:font-semibold lg:tracking-[0.25em] tracking-[0.20em] transition-transform duration-300 group-hover:scale-105 group-hover:text-[#CDAE64]">
                                         THERMAL
                                     </h2>
                                 </div>
                             </Link>
                         </div>
                     </div>
+                     <Requestbutton />
                 </section>
-
-                {/* CTA Section */}
-                <section className="bg-white py-20 px-4">
-                    <div className="container mx-auto flex flex-col md:flex-row items-center justify-between md:px-30">
-                        <h3 className="md:text-5xl font-bold tracking-wider">REACH US TODAY</h3>
-                        <Link
-                            to=""
-                            className="bg-black md:text-md tracking-wider font-semibold text-white px-30 py-4 rounded-lg shadow transition"
-                        >
-                            REQUEST A CALLBACK
-                        </Link>
-                    </div>
-                </section>
+                 
             </main>
 
          

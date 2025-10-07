@@ -66,8 +66,6 @@ const HeroSection: React.FC = () => {
 
   return (
     <div className="w-full overflow-x-hidden bg-black">
-      {/* Add the ScrollToTopButton component */}
-      <ScrollToTopButton />
       {/* Hero Section */}
       <section className="min-h-screen bg-black flex items-center justify-center pt-30 px-4 pb-20">
         <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto">

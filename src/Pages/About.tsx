@@ -12,7 +12,7 @@ const About: React.FC = () => {
       {/* Hero Section */}
 
       <section className="bg-black text-white h-[60vh] flex items-end pb-20 justify-center">
-        <h1 className="text-2xl lg:pb-10 md:text-6xl lg:text-7xl font-semibold tracking-[0.3em] text-center text-[#CDAE64] justify-center"
+        <h1 className="text-2xl lg:pb-10 md:text-5xl lg:text-7xl font-semibold tracking-[0.3em] text-center text-[#CDAE64] justify-center"
           style={{ letterSpacing: '0.50em' }}>
           WHO WE ARE
         </h1>
@@ -20,7 +20,7 @@ const About: React.FC = () => {
 
       {/* Introduction Section */}
       <section className=" mx-auto px-6 py-6">
-        <p className="text-gray-500 lg:text-2xl px-18 py-6 leading-relaxed">
+        <p className="text-gray-500 lg:text-2xl text-lg lg:px-18 py-6 leading-relaxed">
           <span className="text-[#CDAE64] font-medium">
             Welcome to Q<sup>2</sup> Diamonds
           </span>
@@ -34,7 +34,7 @@ const About: React.FC = () => {
 
       {/* Laboratory Image Section */}
       <section className=" mx-auto ">
-        <div className="w-full h-96 md:h-[500px] lg:h-[600px] bg-gray-300 overflow-hidden">
+        <div className="w-full md:h-[500px] lg:h-[600px] bg-gray-300 overflow-hidden">
           <img
             src={bg1}
             alt="Q2 Diamonds Laboratory"
@@ -45,7 +45,7 @@ const About: React.FC = () => {
 
       {/* Expertise Section */}
       <section className=" mx-auto px-6 py-6">
-        <p className="text-gray-500 text-justify leading-relaxed lg:text-2xl px-18 py-6">
+        <p className="text-gray-500 lg:text-justify leading-relaxed text-lg lg:text-2xl lg:px-18 py-6">
           Our expertise is in crafting precision-engineered CVD diamonds
           designed to challenge and transform conventional industrial
           methodologies. Our products offer unparalleled alternatives for a range of applications including semiconductor manufacturing,
@@ -58,11 +58,11 @@ const About: React.FC = () => {
 
       {/* House of Maitri Section */}
 
-      <section className="mx-auto px-18 border-2 border-[#CDAE64]">
-        <div className="grid md:grid-cols-2 gap-12">
+      <section className="mx-auto hidden md:block lg:px-18 md:px-1 border-2 border-[#CDAE64] w-[100%]">
+        <div className="grid md:grid-cols-2 w-[100%]">
           {/* Left side */}
-          <div className="border-r-2 border-[#CDAE64] px-6 py-6 flex items-center">
-            <h2 className="text-2xl md:text-5xl font-semibold">
+          <div className="border-r-2 w-[93%] border-[#CDAE64] px-6 py-6 flex items-center">
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold">
               THRIVING IN
               <br />
               INNOVATION UNDER
@@ -75,8 +75,8 @@ const About: React.FC = () => {
           </div>
 
           {/* Right side */}
-          <div className="px-6 py-6 flex items-center">
-            <p className="text-gray-500 lg:text-2xl text-justify leading-relaxed">
+          <div className=" py-10 flex items-center">
+            <p className="text-gray-500 md:pr-2 lg:text-2xl md:text-lg lg:text-justify leading-relaxed">
               Q² Diamonds is more than an independent entity as it thrives under
               the umbrella of the House of Maitri. As a vital component of this
               vibrant conglomerate, we collaborate closely with other
@@ -113,16 +113,16 @@ const About: React.FC = () => {
       </section>
 
       {/* Laboratory Images Section */}
-      <section className=" mx-auto px-18 border-2 border-[#CDAE64]">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="w-full h-120 bg-gray-300  overflow-hidden">
+      <section className=" mx-auto py-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="w-full bg-gray-300  overflow-hidden">
             <img
               src={whowearebg}
               alt="Q2 Diamonds Lab Equipment"
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="w-full h-120 bg-gray-300  overflow-hidden">
+          <div className="w-full bg-gray-300  overflow-hidden">
             <img
               src={whowearebg1}
               alt="Q2 Diamonds Facility"
@@ -134,56 +134,47 @@ const About: React.FC = () => {
 
       {/* Sustainability Section */}
 
-      <section className=" mx-auto px-6 py-16 border  border-amber-600">
-        <div className="grid md:grid-cols-2 gap-12  items-center">
+      <section className="mx-auto hidden md:block lg:px-18 md:px-1 border-2 border-[#CDAE64] w-[100%]">
+        <div className="grid md:grid-cols-2 w-[100%] ">
           {/* Left side */}
-          <div className=" border-r border-amber-600">
-            <h2 className="text-4xl md:text-5xl font-light leading-tight mb-6">
+          <div className=" border-r-2 w-[93%] border-[#CDAE64] px-6 py-6 flex items-center">
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold ">
               LEADING THE
               <br />
               CHARGE TOWARDS
               <br />
-              <span className="text-amber-600 font-medium">
+              <span className="text-[#CDAE64] font-semibold">
                 {" "}
-                SUSTAINABLE EXCELLENCE
+                SUSTAINABLE
+                <br />
+                EXCELLENCE
               </span>
             </h2>
           </div>
 
           {/* Right side */}
-          <div>
-            <p className="text-gray-700 leading-relaxed">
-              At Q2 , the heart of our mission lies an unbreakable dedication to
-              ESG principles. To us, sustainability transcends mere trendiness
-              as it is an intrinsic part of our DNA guiding every decision and
-              action we undertake. We are aware that the choices we make today
-              will shape the world of tomorrow, and we are committed to forging
-              ...
+          <div className="py-10 flex items-center ">
+            <p className="text-gray-500 lg:text-2xl md:text-lg lg:text-justify leading-relaxed md:pr-2">
+              At Q2 , the heart of our mission lies an unbreakable dedication to ESG principles. To us, sustainability transcends mere trendiness as it is an intrinsic part of our DNA guiding every decision and action we undertake. We are aware that the choices we make today will shape the world of tomorrow, and we are committed to forging
+              {!isExpanded && <span>...</span>}
+
+
+              {isExpanded && (
+                <span className="text-gray-500 lg:text-2xl leading-relaxed mt-4">
+                  {" "}
+                  team and a brighter future.
+                  <br/><br/>
+                  Our ambition is to achieve net-zero emissions by 2030, a milestone that marks our dedication to environmental stewardship. We extend an open invitation for you to join us on this transformative journey. Together, we have the power to effect meaningful change, setting new standards for ethical and eco-conscious practices across the globe.
+                </span>
+              )}
+
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className=" text-[#CDAE64] font-medium cursor-pointer hover:underline focus:outline-none"
+              >
+                {isExpanded ? "Read Less" : "Read More"}
+              </button>
             </p>
-
-            {isExpanded && (
-              <p className="text-gray-700 leading-relaxed mt-4">
-                At Q2 , the heart of our mission lies an unbreakable dedication
-                to ESG principles. To us, sustainability transcends mere
-                trendiness as it is an intrinsic part of our DNA guiding every
-                decision and action we undertake. We are aware that the choices
-                we make today will shape the world of tomorrow, and we are
-                committed to forging team and a brighter future. Our ambition is
-                to achieve net-zero emissions by 2030, a milestone that marks
-                our dedication to environmental stewardship. We extend an open
-                invitation for you to join us on this transformative journey.
-                Together, we have the power to effect meaningful change, setting
-                new standards for ethical and eco-conscious practices across the
-                globe.
-              </p>
-            )}
-
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="mt-3 text-amber-600 font-medium cursor-pointer hover:underline focus:outline-none"
-            >
-              {isExpanded ? "Read Less" : "Read More..."}
-            </button>
           </div>
         </div>
       </section>

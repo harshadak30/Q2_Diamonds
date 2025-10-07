@@ -28,11 +28,8 @@ const ContactUs: React.FC = () => {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.8, 
-      easing: (t) => 1 - Math.pow(2, -10 * t), 
-      direction: "vertical", 
-      gestureDirection: "vertical",
+      easing: (t) => 1 - Math.pow(2, -10 * t),
       smoothWheel: true,
-      smoothTouch: false,
       touchMultiplier: 1.5, 
     });
 
