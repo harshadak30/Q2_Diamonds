@@ -67,7 +67,7 @@ const PopUp: React.FC<PopUpProps> = ({ isOpen, onClose, images }) => {
         }
       `}</style>
       <div 
-        className="bg-white  w-full max-w-md md:max-w-3xl relative shadow-2xl overflow-hidden my-auto"
+        className="bg-white  w-full max-w-md md:max-w-2xl relative shadow-2xl overflow-hidden my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Desktop/Tablet: 3 columns (horizontal), Mobile: 1 column (vertical stack) */}
@@ -80,7 +80,7 @@ const PopUp: React.FC<PopUpProps> = ({ isOpen, onClose, images }) => {
               <img 
                 src={image} 
                 alt={`Image ${idx + 1}`}
-                className="w-full h-auto md:h-[85vh] object-fill"
+                className="w-full h-auto md:h-[85vh] object-contain"
               />
             </div>
           ))}

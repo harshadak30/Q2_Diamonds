@@ -1,79 +1,48 @@
-// import Q2logo from "../assets/Q2logo.png"; 
-
-
-// const Footer = () => {
-//   return (
-//     <footer className="bg-black text-gray-300 py-8">
-//       <div className="container mx-auto md:px-30 flex flex-col md:flex-row items-center justify-between">
-//         <a href="">
-//           <img src={Q2logo} alt="Logo" className="h-12 sm:h-14 lg:h-16 w-auto" />
-//         </a>
-//         <ul className="flex gap-6 mt-4 md:mt-0">
-//           <li>
-//             <a href="about us" className="text-white md:text-lg">
-//               About Us
-//             </a>
-//           </li>
-//           <li>
-//             <a href="q2contact" className="text-white md:text-lg">
-//               Contact Us
-//             </a>
-//           </li>
-//         </ul>
-//       </div>
-
-//       <div className="mt-6 ml-20 text-center md:text-lg text-white">
-//          <div className="text-left">
-//             <p className="text-lg font-bold">
-//               Copyright © 2025 Quantum Quest. All Rights Reserved
-//             </p>
-//           </div>
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
 
 import Q2logo from "../assets/Q2logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-300 py-10 pb-15">
-      <div className="container mx-auto px-6 md:px-20 lg:px-32">
+    <footer className="bg-black text-gray-300 py-8 sm:py-10 md:py-12 lg:py-15">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-32">
         {/* Top Section - Logo and Links */}
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between mb-8">
-          <a href="/">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-6 sm:mb-8 md:mb-10">
+          {/* Logo */}
+          <a href="/" className="mb-4 sm:mb-6 md:mb-0">
             <img
               src={Q2logo}
               alt="Logo"
-              className="h-16 md:h-20 w-auto mb-6 md:mb-0"
+              className="h-12 sm:h-14 md:h-16 lg:h-18 xl:h-20 w-auto"
             />
           </a>
-          <ul className="flex gap-8 md:gap-12">
-            <li>
-              <a
-                href="/about-us"
-                className="text-white text-base md:text-lg hover:text-gray-400 transition-colors"
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="/q2contact"
-                className="text-white text-base md:text-lg hover:text-gray-400 transition-colors"
-              >
-                Contact Us
-              </a>
-            </li>
-          </ul>
+          
+          {/* Navigation Links */}
+          <nav className="w-full md:w-auto">
+            <ul className="flex justify-center md:justify-end gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 flex-wrap">
+              <li>
+                <a
+                  href="/about-us"
+                  className="text-white text-sm sm:text-base md:text-lg lg:text-xl hover:text-gray-400 transition-colors duration-300 whitespace-nowrap"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/q2contact"
+                  className="text-white text-sm sm:text-base md:text-lg lg:text-xl hover:text-gray-400 transition-colors duration-300 whitespace-nowrap"
+                >
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
         {/* Bottom Section - Copyright */}
-        <div className=" pt-35">
-          <p className="text-white text-lg md:text-xl lg:text-xl">
-            Copyright © 2025 <span className="">Quantum Quest</span>.
+        <div className=" pt-4 sm:pt-6 md:pt-8 lg:pt-10">
+          <p className="text-white text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+            Copyright © 2025 <span className="font-semibold">Quantum Quest</span>.{" "}
             All Rights Reserved
           </p>
         </div>
