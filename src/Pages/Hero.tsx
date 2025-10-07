@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react";
 import Q2logo from "../assets/Q2logo.png";
 import OpticsImage from "../assets/Optics.png";
@@ -8,7 +7,7 @@ import GanOnDiamondImage from "../assets/GANONDIAMONDS@2x.png";
 import { Link } from "react-router-dom";
 import Rquestbutton from "./Common/Rquestbutton";
 import ScrollToTopButton from "./Common/ScrollToTopButton";
-
+import AnimatedButton from "./Common/AnimatedButton";
 
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -389,12 +388,13 @@ const HeroSection: React.FC = () => {
               </p>
 
               <div className="flex justify-start">
-                <a
-                  href="#/contact"
-                  className="inline-block bg-black text-white px-10 py-4 hover:bg-gray-900 transition-all duration-300 tracking-wider font-medium"
+                <AnimatedButton
+                  variant="gradient"
+                  onClick={() => (window.location.href = "#/contact")}
+                  className="tracking-wider px-10 py-4"
                 >
                   CHAT WITH US
-                </a>
+                </AnimatedButton>
               </div>
             </div>
           </div>

@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
+// import { motion } from "framer-motion";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface FormData {
   name: string;
@@ -11,6 +16,8 @@ interface FormData {
 
 const ContactUs: React.FC = () => {
 
+   const titleRef = useRef<HTMLHeadingElement | null>(null); 
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -20,9 +27,13 @@ const ContactUs: React.FC = () => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2.3, 
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-      smooth: true
+      duration: 1.8, 
+      easing: (t) => 1 - Math.pow(2, -10 * t), 
+      direction: "vertical", 
+      gestureDirection: "vertical",
+      smoothWheel: true,
+      smoothTouch: false,
+      touchMultiplier: 1.5, 
     });
 
     function raf(time: number) {
@@ -31,6 +42,40 @@ const ContactUs: React.FC = () => {
     }
 
     requestAnimationFrame(raf);
+
+    document.documentElement.style.scrollBehavior = "auto";
+
+    
+    if (titleRef.current) {
+      const titleElement = titleRef.current;
+      const text = titleElement.textContent || "";
+      const chars = text.split("");
+
+      titleElement.innerHTML = chars
+        .map((char) => `<span class="char inline-block opacity-0">${char === " " ? "&nbsp;" : char}</span>`)
+        .join("");
+
+      const spans = titleElement.querySelectorAll(".char");
+      
+
+      gsap.fromTo(
+        spans,
+        { x: 70, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.03,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: titleElement,
+            start: "top 90%",
+            end: "bottom 60%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
 
     return () => {
       lenis.destroy();
@@ -67,9 +112,9 @@ const ContactUs: React.FC = () => {
       </header> */}
 
       {/* Form Section */}
-      <div className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="w-full max-w-2xl p-6 rounded-lg shadow-md">
-          <h1 className="md:text-4xl font-semibold mb-12 text-white">
+      <div className="flex-1 flex items-center justify-center px-4 pt-50">
+        <div className="w-full max-w-2xl md:p-6 rounded-lg shadow-md">
+          <h1 ref={titleRef} className="md:text-4xl md:max-w-[85%] font-semibold mb-12 text-white title-animation">
             PLEASE CONTACT US FOR ANY QUERIES
           </h1>
 

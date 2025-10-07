@@ -21,12 +21,13 @@ const Division: React.FC = () => {
                         <Link to="/contact">Contact Us</Link>
                     </div>
                 </div>
-                <div className="container mx-auto text-center py-40">
+               
+            </header> */}
+             <div className="bg-black containe text-center py-55">
                     <h2 className="text-[#CDAE64] text-3xl md:text-6xl font-semibold tracking-widest">
                         DIVISION
                     </h2>
                 </div>
-            </header> */}
 
             {/* ==== Main Content ==== */}
             <main className="flex-1">
