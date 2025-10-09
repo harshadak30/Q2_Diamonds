@@ -14,7 +14,7 @@ const Rquestbutton = () => {
           <AnimatedButton
             variant="gradient"
             onClick={() => (window.location.href = "/contact")}
-            className="tracking-wide sm:tracking-wider text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-4 font-semibold w-full sm:w-auto text-center"
+            className=" sm:tracking-wider text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 lg:px-12 py-5 tracking-wider sm:py-4 md:py-4 font-medium w-full sm:w-auto text-center"
           >
             REQUEST A CALLBACK
           </AnimatedButton>

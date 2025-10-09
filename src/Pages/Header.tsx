@@ -70,7 +70,7 @@ const Navigation = () => {
           scrolled ? "bg-black/50" : "bg-black"
         } ${hidden ? "-top-32" : "top-0"} h-16 md:h-20 lg:h-24`}
       >
-        <div className="flex items-center justify-between w-full h-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-48 py-2">
+        <div className="flex items-center justify-between w-full h-full px-5 sm:px-7 md:px-9 lg:px-13 xl:px-17 2xl:px-49 py-12">
           {/* Logo - Left side */}
           <div className="flex items-center">
             <div className="h-8 sm:h-10 md:h-12 lg:h-14 flex items-center">
@@ -79,7 +79,7 @@ const Navigation = () => {
                   <img
                     src={Q2logo}
                     alt="Logo"
-                    className="h-12 sm:h-14 md:h-16 w-auto"
+                    className="h-20 sm:h-22 md:h-24 w-auto"
                   />
                 </button>
               </div>
@@ -90,19 +90,19 @@ const Navigation = () => {
           <div className="hidden md:flex gap-6 lg:gap-8 xl:gap-12">
             <Link
               to="/about"
-              className="text-white hover:text-gray-300 transition-colors whitespace-nowrap text-sm lg:text-base xl:text-lg"
+              className="text-white font-medium  hover:text-gray-300 transition-colors whitespace-nowrap text-sm lg:text-base xl:text-lg"
             >
               About Us
             </Link>
             <Link
               to="/division"
-              className="text-white hover:text-gray-300 transition-colors whitespace-nowrap text-sm lg:text-base xl:text-lg"
+              className="text-white font-medium  hover:text-gray-300 transition-colors whitespace-nowrap text-sm lg:text-base xl:text-lg"
             >
               Division
             </Link>
             <Link
               to="/contact"
-              className="text-white hover:text-gray-300 transition-colors whitespace-nowrap text-sm lg:text-base xl:text-lg"
+              className="text-white font-medium  hover:text-gray-300 transition-colors whitespace-nowrap text-sm lg:text-base xl:text-lg"
             >
               Contact Us
             </Link>

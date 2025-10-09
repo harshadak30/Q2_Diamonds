@@ -3,8 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import GanOnDiamond from "../assets/Gan on Diamond - H copy.jpg";
 import QuantumH from "../assets/Quantum - H copy.jpg";
-import OpticsH from "../assets/Optics - H copy.jpg";
-import ThermalH from "../assets/Thermal - H copy.jpg";
+import OpticsH from "../assets/Optics - H copy 2.jpg";
+import ThermalH from "../assets/Thermal - H copy 2.jpg";
 import Requestbutton from "./Common/Rquestbutton";
 
 const Division: React.FC = () => {

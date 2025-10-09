@@ -22,7 +22,7 @@ const Thermal = () => {
 
   const popupData = {
     Power: [Power, Power1, Power2],
-    photonics: [photonics1,photonics2, photonics3],
+    photonics: [photonics2, photonics3 , photonics1],
     space: [space, space1, space2],
   };
 
@@ -67,7 +67,7 @@ const Thermal = () => {
       <img
         src={optic_graph1}
         alt="Transmission Chart"
-        className="w-full h-auto rounded-lg object-contain"
+        className="w-full h-[400px] sm:h-[450px] md:h-[400px] lg:h-[550px] xl:h-[600px] rounded-lg"
       />
     </div>
 
@@ -76,7 +76,7 @@ const Thermal = () => {
       <img
         src={optic_graph}
         alt="Transmission Graph"
-        className="w-full h-auto rounded-lg object-contain"
+        className="w-full h-[400px] sm:h-[450px] md:h-[400px] lg:h-[550px] xl:h-[600px] rounded-lg"
       />
     </div>
   </div>

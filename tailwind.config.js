@@ -12,6 +12,7 @@ export default {
         galderglynnlt: ['Galderglynnlt', 'sans-serif'],
         galderglynnrg: ['Galderglynnrg', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
