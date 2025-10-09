@@ -6,9 +6,8 @@ import ThermalImage from "../assets/Thermal.png";
 import GanOnDiamondImage from "../assets/GANONDIAMONDS@2x.png";
 import { Link } from "react-router-dom";
 import Rquestbutton from "./Common/Rquestbutton";
-import ScrollToTopButton from "./Common/ScrollToTopButton";
 import AnimatedButton from "./Common/AnimatedButton";
-import '../fonts/fonts.css';
+import "../fonts/fonts.css";
 
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -68,9 +67,9 @@ const HeroSection: React.FC = () => {
   return (
     <div className="w-full overflow-x-hidden bg-black">
       {/* Hero Section */}
-      <section className="min-h-screen bg-black flex items-center justify-center lg:pt-30 px-4 lg:pb-20">
+      {/* <section className="min-h-screen bg-black flex items-center justify-center  lg:pt-30 px-4 lg:pb-20">
         <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto">
-          <h1 className="text-gray-300 text-3xl md:text-5xl lg:text-9xl font-bold mt-60">
+          <h1 className="text-[#c0bfc5] text-3xl md:text-5xl lg:text-9xl font-bold lg:mt-60  ">
             QUANTUM QUEST
           </h1>
           <div className="relative mb-8">
@@ -81,10 +80,49 @@ const HeroSection: React.FC = () => {
             />
           </div>
         </div>
+      </section> */}
+      {/* <section className="min-h-screen bg-black flex items-center justify-center lg:pt-30 px-4 lg:pb-10">
+  <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto">
+    <h1 className="text-[#c0bfc5] text-6xl md:text-7xl lg:text-9xl font-bold lg:mt-60  md:mt-40 mt-30 font-raleway">
+      QUANTUM QUEST
+    </h1>
+    <div className="relative mb-8">
+      <img
+        src={Q2logo}
+        alt="Q2 Diamonds Logo"
+        className="h-120 md:h-140 lg:h-[680px] w-auto max-w-full"
+      />
+    </div>
+  </div>
+</section> */}
+      <section className="min-h-screen bg-black flex items-center justify-center lg:pt-30 px-4 lg:pb-10">
+        <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto mb-2">
+          <h1
+            className="text-[#c0bfc5] font-bold font-raleway
+                   text-4xl mt-10
+                   sm:text-5xl sm:mt-24
+                   md:text-6xl md:mt-32
+                   lg:text-8xl lg:mt-60
+                   xl:text-9xl tracking-wide" 
+          >
+            QUANTUM QUEST
+          </h1>
+          <div className="relative mb-8">
+            <img
+              src={Q2logo}
+              alt="Q2 Diamonds Logo"
+              className="w-auto max-w-full
+                   h-75
+                   sm:h-96
+                   md:h-120
+                   lg:h-[500px]
+                   xl:h-[680px]"
+            />
+          </div>
+        </div>
       </section>
-
       <section className="min-h-screen bg-white px-4 sm:px-6 md:px-8 lg:px-10 py-8 md:pt-12">
-        <p  className="text-gray-400 font-[galderglynnlt] text-sm sm:text-base md:text-2xl lg:text-4xl font-semibold text-center mb-6 sm:mb-8 tracking-[0.15em] sm:tracking-[0.25em] leading-6 sm:leading-8">
+        <p className="text-gray-400 font-[galderglynnlt] text-xl sm:text-base md:text-2xl lg:text-4xl font-semibold leading-relaxed text-center mb-6 sm:mb-8 tracking-[0.15em] sm:tracking-[0.25em] ">
           <span className="text-black ">POWERED BY</span>{" "}
           <br className="md:hidden" />
           <span className="text-[#CDAE64] ">HOUSE OF MAITRI</span>
@@ -155,7 +193,7 @@ const HeroSection: React.FC = () => {
 
       <section
         ref={videoSectionRef}
-        className="py-12 md:py-16 lg:py-20 bg-black"
+        className="py-12 md:py-18 lg:py-20 bg-black"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
           <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-16">
@@ -171,19 +209,21 @@ const HeroSection: React.FC = () => {
                   controls={isVideoPlaying}
                   controlsList=""
                 >
-                  <source src="/Videos/Q2FINAL2024_1.mp4" type="video/mp4" />
+                  <source src="/video/Q2FINAL2024_1.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
 
                 {/* Custom Play/Pause Button */}
                 <div
-                  className={`absolute inset-0 flex items-center justify-center cursor-pointer transition-all duration-300 ${isVideoPlaying
-                    ? "opacity-0 hover:opacity-100"
-                    : "opacity-100"
-                    } ${isVideoPlaying
+                  className={`absolute inset-0 flex items-center justify-center cursor-pointer transition-all duration-300 ${
+                    isVideoPlaying
+                      ? "opacity-0 hover:opacity-100"
+                      : "opacity-100"
+                  } ${
+                    isVideoPlaying
                       ? "pointer-events-none"
                       : "pointer-events-auto"
-                    }`}
+                  }`}
                   onClick={toggleVideoPlay}
                 >
                   <div className="bg-black/60 backdrop-blur-sm rounded-full p-4 md:p-6 lg:p-8 transition-all duration-300 hover:scale-110 hover:bg-black/80 border-2 border-white/30">
@@ -231,60 +271,83 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Content Section - Right */}
+            {/* Content Section - Right */}
             <div className="flex-1 w-full">
               <div className="space-y-6 md:space-y-8">
                 {/* UPCOMING EVENTS Title */}
                 <div>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 text-center lg:text-left">
+                  <h2 className="text-xl md:text-4xl lg:text-4xl font-bold text-white mb-12 md:mb-14lg:mb-18 text-left lg:text-left leading-relaxed tracking-wide">
                     UPCOMING EVENTS
                   </h2>
                 </div>
 
                 {/* Small Satellite Conference with Arrow Button */}
-                <div className="text-center lg:text-left">
-                  {/* Title and Button Row */}
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-blue-400">
+                <div className="text-left lg:text-left">
+                  {/* Title */}
+                  <div className="mb-3">
+                    <h3 className="text-xl md:text-2xl lg:text-2xl font-normal text-blue-400 font-[Montserratmd]">
                       Small Satellite Conference
                     </h3>
-
-                    {/* Blue Arrow Button */}
-                    <a
-                      href="https://smallsat.org/conference/registration/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-blue-400 hover:bg-blue-500 text-white p-4 rounded-full flex items-center justify-center transition-all duration-300 transform  shadow-lg w-15 h-15 mx-auto lg:mx-0"
-                    >
-                      <svg
-                        width="25"
-                        height="26"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        className="transform rotate-290"
-                      >
-                        <path d="M5 12h14m-7-7l7 7-7 7" />
-                      </svg>
-                    </a>
                   </div>
 
                   {/* Address and Date */}
                   <div className="space-y-4">
-                    {/* Address */}
-                    <div className="space-y-1">
-                      <p className="text-gray-300 text-lg md:text-xl">
-                        Salt Palace Convention Center 100 South West
-                      </p>
-                      <p className="text-gray-300 text-lg md:text-xl">
-                        Temple Salt Lake City, Utah
-                      </p>
+                    {/* Address with Arrow Button for Desktop */}
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-4">
+                      <div className="space-y-1">
+                        <p className="text-gray-300 text-base md:text-base lg:text-base font-[Montserratrgg]">
+                          Salt Palace Convention Center 100 South West Temple
+                          Salt Lake City, Utah
+                        </p>
+                      </div>
+
+                      {/* Blue Arrow Button - Desktop only */}
+                      <a
+                        href="https://smallsat.org/conference/registration/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hidden lg:flex bg-blue-400 hover:bg-blue-500 text-white p-4 rounded-full items-center justify-center transition-all duration-300 transform shadow-lg flex-shrink-0"
+                        style={{ width: "60px", height: "60px" }}
+                      >
+                        <svg
+                          width="28"
+                          height="26"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                          className="transform rotate-330"
+                        >
+                          <path d="M5 12h14m-7-7l7 7-7 7" />
+                        </svg>
+                      </a>
                     </div>
 
                     {/* Date */}
-                    <p className="text-gray-400 text-lg md:text-xl">
+                    <p className="text-gray-400  md:text-base text-base">
                       August 11th–13th, 2025
                     </p>
+
+                    {/* Blue Arrow Button - Mobile only (below date) */}
+                    <a
+                      href="https://smallsat.org/conference/registration/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="lg:hidden bg-blue-400 hover:bg-blue-500 text-white p-4 rounded-full inline-flex items-center justify-center transition-all duration-300 transform shadow-lg"
+                      style={{ width: "50px", height: "50px" }}
+                    >
+                      <svg
+                        width="30"
+                        height="29"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        viewBox="0 0 24 24"
+                        className="transform rotate-330"
+                      >
+                        <path d="M5 12h14m-7-7l7 7-7 7" />
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -330,16 +393,16 @@ const HeroSection: React.FC = () => {
         <div className="max-w-7xl mx-auto px-10 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row md:gap-16 lg:gap-20">
             <div className="flex-1">
-              <p className="text-sm text-gray-500  tracking-wider mb-4 uppercase">
+              <p className="text-base md:text-xl text-gray-600  tracking-wider mb-4 md:mb-8  ">
                 Collaboration
               </p>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold  mb-8">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold  mb-8 tracking-wider">
                 RESEARCH GRANTS
               </h2>
             </div>
 
             <div className="flex-1">
-              <p className="text-base md:text-xl text-gray-700 mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl  mb-8 leading-relaxed ">
                 Quantum Quest is committed to advancing and supporting research
                 at the forefront of knowledge. Through our Research Grant
                 Programme, we provide funding to innovative projects that align
@@ -347,30 +410,30 @@ const HeroSection: React.FC = () => {
                 projects in the following research themes:
               </p>
 
-              <ul className="space-y-3 mb-8 text-gray-700">
-                <li className="flex items-start text-base md:text-xl">
+              <ul className="space-y-3 mb-8 ">
+                <li className="flex items-start text-lg md:text-xl">
                   <span className="mr-3">-</span>
                   <span>Quantum Sensing and Computing</span>
                 </li>
-                <li className="flex items-start text-base md:text-xl">
+                <li className="flex items-start text-lg md:text-xl ">
                   <span className="mr-3">-</span>
                   <span>Optoelectronics</span>
                 </li>
-                <li className="flex items-start text-base md:text-xl">
+                <li className="flex items-start text-lg md:text-xl ">
                   <span className="mr-3">-</span>
                   <span>High-Power Electronics</span>
                 </li>
-                <li className="flex items-start text-base md:text-xl">
+                <li className="flex items-start text-lg md:text-xl ">
                   <span className="mr-3">-</span>
                   <span>RF Electronics/high frequency devices</span>
                 </li>
-                <li className="flex items-start text-base md:text-xl">
+                <li className="flex items-start text-lg md:text-xl ">
                   <span className="mr-3">-</span>
                   <span>Thermal Management/Heat spreaders</span>
                 </li>
               </ul>
 
-              <p className="text-gray-700 mb-8 text-base md:text-xl">
+              <p className=" mb-8 text-lg md:text-xl ">
                 For inquiries or additional information about grants and PhD
                 scholarships available, please contact us.
               </p>

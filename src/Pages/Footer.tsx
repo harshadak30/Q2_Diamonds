@@ -9,11 +9,11 @@ const Footer = () => {
         {/* Top Section - Logo and Links */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-6 sm:mb-8 md:mb-10">
           {/* Logo */}
-          <a href="/" className="mb-4 sm:mb-6 md:mb-0">
+          <a href="/" className="mb-10 sm:mb-10 md:mb-10">
             <img
               src={Q2logo}
               alt="Logo"
-              className="h-12 sm:h-14 md:h-16 lg:h-18 xl:h-20 w-auto"
+              className="h-22  lg:h-24 xl:h-26 w-auto"
             />
           </a>
           
@@ -41,9 +41,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section - Copyright */}
-        <div className=" pt-4 sm:pt-6 md:pt-8 lg:pt-10">
-          <p className="text-white text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
-            Copyright © 2025 <span className="font-semibold">Quantum Quest</span>.{" "}
+        <div className=" pt-6 sm:pt-10 md:pt-12 lg:pt-16">
+          <p className="text-white :sm:text-center  text-left text-base md:text-base lg:text-lg xl:text-xl">
+            Copyright © 2025 <span className="font-medium">Quantum Quest</span>.{" "}
             All Rights Reserved
           </p>
         </div>
