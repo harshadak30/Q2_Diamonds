@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Galderglynnbd';
+  src: url('./Galderglynn Titling Bd.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Galderglynnlt';
+  src: url('./Galderglynn Titling Lt.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Galderglynnrg';
+  src: url('./Galderglynn Titling Rg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserratmd';
+  src: url('./Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserratrg';
+  src: url('./Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserratbd';
+  src: url('./Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}

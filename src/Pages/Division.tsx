@@ -26,7 +26,7 @@ const Division: React.FC = () => {
                
             </header> */}
              <div className="bg-black text-center py-40 md:py-55 ">
-                    <h2 className="text-[#CDAE64] text-3xl  md:text-6xl font-semibold tracking-widest">
+                    <h2 className="text-[#CDAE64] font-[montserratmd] text-3xl  md:text-5xl tracking-[0.25em]">
                         DIVISION
                     </h2>
                 </div>
@@ -38,7 +38,7 @@ const Division: React.FC = () => {
                     <div className="space-y-8 md:p-14 p-7 py-10 border-b-2 border-black">
                         {/* Image 1 */}
                         <div className="relative group">
-                            <Link to="">
+                            <Link to="/GanOnDiamond">
                                 <img
                                     src={GanOnDiamond}
                                     alt="GaN on Diamond"
@@ -55,7 +55,7 @@ const Division: React.FC = () => {
 
                         {/* Image 2 */}
                         <div className="relative group">
-                            <Link to="">
+                            <Link to="/Quantum">
                                 <img
                                     src={QuantumH}
                                     alt="Quantum"
@@ -71,7 +71,7 @@ const Division: React.FC = () => {
 
                         {/* Image 3 */}
                         <div className="relative group">
-                            <Link to="">
+                            <Link to="/optics">
                                 <img
                                     src={OpticsH}
                                     alt="Optics"
@@ -87,7 +87,7 @@ const Division: React.FC = () => {
 
                         {/* Image 4 */}
                         <div className="relative group">
-                            <Link to="">
+                            <Link to="/Thermal">
                                 <img
                                 src={ThermalH}
                                     alt="Thermal"

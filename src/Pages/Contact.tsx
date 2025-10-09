@@ -17,6 +17,9 @@ interface FormData {
 const ContactUs: React.FC = () => {
 
    const titleRef = useRef<HTMLHeadingElement | null>(null); 
+    const emailRef = useRef<HTMLDivElement | null>(null);
+  const phoneRef = useRef<HTMLDivElement | null>(null);
+  const locationRef = useRef<HTMLDivElement | null>(null);
 
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -68,6 +71,31 @@ const ContactUs: React.FC = () => {
             trigger: titleElement,
             start: "top 90%",
             end: "bottom 60%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+     // Contact info staggered animation
+    const contactRefs = [emailRef.current, phoneRef.current, locationRef.current].filter(Boolean);
+    
+    if (contactRefs.length > 0) {
+      gsap.fromTo(
+        contactRefs,
+        { 
+          y: 60, 
+          opacity: 0 
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: emailRef.current,
+            start: "top 85%",
             toggleActions: "play none none none",
           },
         }
@@ -168,19 +196,19 @@ const ContactUs: React.FC = () => {
       {/* Contact Info */}
       <div className="bg-black flex rounded-lg shadow-md md:px-20 md:py-72">
         <div className="space-y-6 flex justify-evenly w-full">
-          <div>
+          <div  ref={emailRef} style={{ opacity: 0 }}>
             <h2 className="md:text-4xl font-semibold text-white mb-4">Email</h2>
             <a href="mailto:contact@gzdiamonds.com" className="text-white hover:text-blue-300 transition-colors duration-200">
               contact@gzdiamonds.com
             </a>
           </div>
-          <div>
+          <div ref={phoneRef} style={{ opacity: 0 }}>
             <h2 className="md:text-4xl font-semibold text-white mb-4">Phone</h2>
             <a href="tel:+16803220714" className="text-white hover:text-blue-300 transition-colors duration-200">
               +1 (680) 322-0714
             </a>
           </div>
-          <div>
+          <div ref={locationRef} style={{ opacity: 0 }}>
             <h2 className="md:text-4xl font-semibold text-white mb-4">Location</h2>
             <Link to="" className="text-white hover:text-blue-300">USA</Link>
           </div>

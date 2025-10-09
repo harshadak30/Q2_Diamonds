@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import Q2logo from "../assets/Q2logo.png";
 
 const Footer = () => {
@@ -20,20 +21,20 @@ const Footer = () => {
           <nav className="w-full md:w-auto">
             <ul className="flex justify-center md:justify-end gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 flex-wrap">
               <li>
-                <a
-                  href="/about-us"
+                <Link
+                  to="/about"
                   className="text-white text-sm sm:text-base md:text-lg lg:text-xl hover:text-gray-400 transition-colors duration-300 whitespace-nowrap"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/q2contact"
+                <Link
+                  to="/contact"
                   className="text-white text-sm sm:text-base md:text-lg lg:text-xl hover:text-gray-400 transition-colors duration-300 whitespace-nowrap"
                 >
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>
