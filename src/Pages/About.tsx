@@ -11,8 +11,8 @@ const About: React.FC = () => {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
 
-      <section className="bg-black text-white h-[60vh] flex items-end pb-20 justify-center">
-        <h1 className="text-2xl lg:pb-10 md:text-5xl lg:text-7xl font-semibold tracking-[0.3em] text-center text-[#CDAE64] justify-center"
+      <section className="bg-black text-white h-[65vh] flex items-end pb-20 justify-center">
+        <h1 className="text-2xl lg:pb-10 md:text-5xl lg:text-7xl  tracking-[0.3em] text-center text-[#CDAE64] justify-center font-[galderglynnlt]"
           style={{ letterSpacing: '0.50em' }}>
           WHO WE ARE
         </h1>
@@ -20,7 +20,7 @@ const About: React.FC = () => {
 
       {/* Introduction Section */}
       <section className=" mx-auto px-6 py-6">
-        <p className="text-gray-500 lg:text-2xl text-lg lg:px-18 py-6 leading-relaxed">
+        <p className="text-gray-500 lg:text-xl text-lg lg:px-18 py-6 leading-relaxed font-[montserratmd]">
           <span className="text-[#CDAE64] font-medium">
             Welcome to Q<sup>2</sup> Diamonds
           </span>
@@ -45,7 +45,7 @@ const About: React.FC = () => {
 
       {/* Expertise Section */}
       <section className=" mx-auto px-6 py-6">
-        <p className="text-gray-500 lg:text-justify leading-relaxed text-lg lg:text-2xl lg:px-18 py-6">
+        <p className="text-gray-500 lg:text-justify leading-relaxed text-lg lg:text-xl lg:px-18 py-6 font-[montserratmd]">
           Our expertise is in crafting precision-engineered CVD diamonds
           designed to challenge and transform conventional industrial
           methodologies. Our products offer unparalleled alternatives for a range of applications including semiconductor manufacturing,
@@ -62,13 +62,13 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 w-[100%]">
           {/* Left side */}
           <div className="border-r-2 w-[93%] border-[#CDAE64] px-6 py-6 flex items-center">
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold">
+            <h2 className="font-[galderglynnlt] text-2xl md:text-3xl lg:text-5xl">
               THRIVING IN
               <br />
               INNOVATION UNDER
               <br />
               THE{" "}
-              <span className="text-[#CDAE64] font-semibold">
+              <span className="text-[#CDAE64] font-[galderglynnrg]">
                 HOUSE OF MAITRI
               </span>
             </h2>
@@ -76,7 +76,7 @@ const About: React.FC = () => {
 
           {/* Right side */}
           <div className=" py-10 flex items-center">
-            <p className="text-gray-500 md:pr-2 lg:text-2xl md:text-lg lg:text-justify leading-relaxed">
+            <p className="text-gray-500 md:pr-2 lg:text-xl md:text-lg lg:text-justify leading-relaxed font-[montserratmd]">
               Q² Diamonds is more than an independent entity as it thrives under
               the umbrella of the House of Maitri. As a vital component of this
               vibrant conglomerate, we collaborate closely with other
@@ -85,7 +85,7 @@ const About: React.FC = () => {
               {!isExpanded && <span>...</span>}
 
               {isExpanded && (
-                <span className="text-gray-500 lg:text-2xl leading-relaxed mt-4">
+                <span className="text-gray-500 lg:text-xl leading-relaxed mt-4 font-[montserratmd]">
                   {" "}
                   team and
                   collaborators consist of distinguished academicians, industry
@@ -138,12 +138,12 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 w-[100%] ">
           {/* Left side */}
           <div className=" border-r-2 w-[93%] border-[#CDAE64] px-6 py-6 flex items-center">
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-semibold ">
+            <h2 className="font-[galderglynnlt] text-2xl md:text-3xl lg:text-5xl ">
               LEADING THE
               <br />
               CHARGE TOWARDS
               <br />
-              <span className="text-[#CDAE64] font-semibold">
+              <span className="text-[#CDAE64] font-[galderglynnrg]">
                 {" "}
                 SUSTAINABLE
                 <br />
@@ -154,13 +154,13 @@ const About: React.FC = () => {
 
           {/* Right side */}
           <div className="py-10 flex items-center ">
-            <p className="text-gray-500 lg:text-2xl md:text-lg lg:text-justify leading-relaxed md:pr-2">
+            <p className="text-gray-500 lg:text-xl md:text-lg lg:text-justify leading-relaxed md:pr-2 font-[montserratmd]">
               At Q2 , the heart of our mission lies an unbreakable dedication to ESG principles. To us, sustainability transcends mere trendiness as it is an intrinsic part of our DNA guiding every decision and action we undertake. We are aware that the choices we make today will shape the world of tomorrow, and we are committed to forging
               {!isExpanded && <span>...</span>}
 
 
               {isExpanded && (
-                <span className="text-gray-500 lg:text-2xl leading-relaxed mt-4">
+                <span className="text-gray-500 lg:text-xl leading-relaxed mt-4 font-[montserratmd]">
                   {" "}
                   team and a brighter future.
                   <br/><br/>

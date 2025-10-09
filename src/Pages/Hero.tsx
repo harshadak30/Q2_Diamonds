@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Rquestbutton from "./Common/Rquestbutton";
 import ScrollToTopButton from "./Common/ScrollToTopButton";
 import AnimatedButton from "./Common/AnimatedButton";
+import '../fonts/fonts.css';
 
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -67,56 +68,53 @@ const HeroSection: React.FC = () => {
   return (
     <div className="w-full overflow-x-hidden bg-black">
       {/* Hero Section */}
-      <section className="min-h-screen bg-black flex items-center justify-center pt-30 px-4 pb-20">
+      <section className="min-h-screen bg-black flex items-center justify-center lg:pt-30 px-4 lg:pb-20">
         <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto">
-          <h1 className="text-gray-300 text-5xl md:text-6xl lg:text-9xl font-bold mt-60">
+          <h1 className="text-gray-300 text-3xl md:text-5xl lg:text-9xl font-bold mt-60">
             QUANTUM QUEST
           </h1>
           <div className="relative mb-8">
             <img
               src={Q2logo}
               alt="Q2 Diamonds Logo"
-              className="h-100 md:h-280 lg:h-[680px] w-auto max-w-full"
+              className="h-80 md:h-120 lg:h-[680px] w-auto max-w-full"
             />
           </div>
         </div>
       </section>
 
-      <section className="min-h-screen bg-white px-4 md:px-8 lg:px-16 py-8 md:py-12">
-        <p className="text-gray-400 text-sm md:text-5xl font-semibold text-center  mb-8">
-          <span className="text-black"> POWERED BY </span>{" "}
-          <span className="text-[#CDAE64]">HOUSE OF MAITRI </span>
+      <section className="min-h-screen bg-white px-4 sm:px-6 md:px-8 lg:px-10 py-8 md:pt-12">
+        <p  className="text-gray-400 font-[galderglynnlt] text-sm sm:text-base md:text-2xl lg:text-4xl font-semibold text-center mb-6 sm:mb-8 tracking-[0.15em] sm:tracking-[0.25em] leading-6 sm:leading-8">
+          <span className="text-black ">POWERED BY</span>{" "}
+          <br className="md:hidden" />
+          <span className="text-[#CDAE64] ">HOUSE OF MAITRI</span>
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-8xl mx-auto pt-20">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 font-[galderglynnlt] gap-3 sm:gap-4 md:gap-6 lg:gap-8 max-w-8xl mx-auto md:pt-4">
           <Link to="/optics" className="block">
-            <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden group rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+            <div className="relative overflow-hidden group transition-shadow duration-300 cursor-pointer">
               <img
                 src={OpticsImage}
                 alt="Optics"
-                className="w-full h-full object-cover  transition-transform duration-500"
+                className="w-full h-auto transition-transform duration-500"
               />
-              <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span
-                  className="text-white  group-hover:text-[#CDAE64] 
-  text-[clamp(1.5rem,5vw,4rem)] transition-colors duration-300"
-                >
+              <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                <span className="text-white group-hover:text-[#CDAE64] text-xl sm:text-2xl md:text-2xl lg:text-4xl xl:text-5xl transition-colors duration-300 tracking-wide sm:tracking-wider lg:tracking-[0.25em]">
                   OPTICS
                 </span>
               </div>
             </div>
           </Link>
+
           <Link to="/Quantum" className="block">
-            <div className="relative h-64 sm:h-80  md:h-96 lg:h-[500px] overflow-hidden group rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+            <div className="relative overflow-hidden group transition-shadow duration-300 cursor-pointer">
               <img
                 src={QuantumImage}
                 alt="QuantumImage"
-                className="w-full h-full object-cover  transition-transform duration-500"
+                className="w-full h-auto transition-transform duration-500"
               />
-              <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span
-                  className="text-black  group-hover:text-[#CDAE64] 
-  text-[clamp(1.5rem,5vw,4rem)] transition-colors duration-300"
-                >
+              <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                <span className="text-black group-hover:text-[#CDAE64] text-xl sm:text-2xl md:text-2xl lg:text-4xl xl:text-5xl transition-colors duration-300 tracking-wide sm:tracking-wider lg:tracking-[0.25em]">
                   QUANTUM
                 </span>
               </div>
@@ -124,17 +122,14 @@ const HeroSection: React.FC = () => {
           </Link>
 
           <Link to="/Thermal" className="block">
-            <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden group rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+            <div className="relative overflow-hidden group transition-shadow duration-300 cursor-pointer">
               <img
                 src={ThermalImage}
                 alt="ThermalImage"
-                className="w-full h-full object-cover  transition-transform duration-500"
+                className="w-full h-auto transition-transform duration-500"
               />
-              <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span
-                  className="text-black  group-hover:text-[#CDAE64] 
-  text-[clamp(1.5rem,5vw,4rem)] transition-colors duration-300"
-                >
+              <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                <span className="text-black group-hover:text-[#CDAE64] text-xl sm:text-2xl md:text-2xl lg:text-4xl xl:text-5xl transition-colors duration-300 tracking-wide sm:tracking-wider lg:tracking-[0.25em]">
                   THERMAL
                 </span>
               </div>
@@ -142,18 +137,15 @@ const HeroSection: React.FC = () => {
           </Link>
 
           <Link to="/GanOnDiamond" className="block">
-            <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] overflow-hidden group rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+            <div className="relative overflow-hidden group transition-shadow duration-300 cursor-pointer">
               <img
                 src={GanOnDiamondImage}
-                alt="ThermalImage"
-                className="w-full h-full object-cover  transition-transform duration-500"
+                alt="GanOnDiamondImage"
+                className="w-full h-auto transition-transform duration-500"
               />
-              <div className="absolute inset-0  bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span
-                  className="text-black  group-hover:text-[#CDAE64] 
-  text-[clamp(1.5rem,5vw,4rem)] transition-colors duration-300"
-                >
-                  GAN ON DIAMOND
+              <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                <span className="text-black group-hover:text-[#CDAE64] text-xl sm:text-2xl md:text-2xl lg:text-4xl xl:text-5xl transition-colors duration-300 tracking-wide sm:tracking-wider lg:tracking-[0.25em] text-center px-2">
+                  G<span className="font-[montserratmd]">a</span>N ON DIAMOND
                 </span>
               </div>
             </div>
@@ -185,15 +177,13 @@ const HeroSection: React.FC = () => {
 
                 {/* Custom Play/Pause Button */}
                 <div
-                  className={`absolute inset-0 flex items-center justify-center cursor-pointer transition-all duration-300 ${
-                    isVideoPlaying
-                      ? "opacity-0 hover:opacity-100"
-                      : "opacity-100"
-                  } ${
-                    isVideoPlaying
+                  className={`absolute inset-0 flex items-center justify-center cursor-pointer transition-all duration-300 ${isVideoPlaying
+                    ? "opacity-0 hover:opacity-100"
+                    : "opacity-100"
+                    } ${isVideoPlaying
                       ? "pointer-events-none"
                       : "pointer-events-auto"
-                  }`}
+                    }`}
                   onClick={toggleVideoPlay}
                 >
                   <div className="bg-black/60 backdrop-blur-sm rounded-full p-4 md:p-6 lg:p-8 transition-all duration-300 hover:scale-110 hover:bg-black/80 border-2 border-white/30">
@@ -317,7 +307,7 @@ const HeroSection: React.FC = () => {
             ) => (
               <span
                 key={i}
-                className="text-6xl md:text-7xl lg:text-6xl font-bold mx-12 text-black"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mx-12 text-black tracking-widest "
               >
                 {item}{" "}
                 <span className="text-4xl md:text-5xl text-black-400">•</span>
@@ -337,8 +327,8 @@ const HeroSection: React.FC = () => {
       </div>
       {/* Research Grants Section */}
       <section className="py-16 md:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-12 md:gap-16 lg:gap-20">
+        <div className="max-w-7xl mx-auto px-10 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row md:gap-16 lg:gap-20">
             <div className="flex-1">
               <p className="text-sm text-gray-500  tracking-wider mb-4 uppercase">
                 Collaboration
@@ -388,7 +378,7 @@ const HeroSection: React.FC = () => {
               <div className="flex justify-start">
                 <AnimatedButton
                   variant="gradient"
-                  onClick={() => (window.location.href = "#/contact")}
+                  onClick={() => (window.location.href = "/contact")}
                   className="tracking-wider px-10 py-4"
                 >
                   CHAT WITH US

@@ -1,4 +1,6 @@
 
+
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Pages/Header.tsx";
@@ -15,6 +17,8 @@ import GanOnDiamond from "./Pages/GanOnDiamond.tsx";
 import CustomCursor from './Pages/Common/CustomCursor.tsx';
 import CustomScrollBar from './Pages/Common/CustomScrollBar.tsx';
 import ScrollToTopButton from "./Pages/Common/ScrollToTopButton.tsx";
+import ScrollToTop from "./Pages/Common/ScrollToTop.tsx";
+import './fonts/fonts.css';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +27,7 @@ const App: React.FC = () => {
       <CustomScrollBar/>
        {/* Add the ScrollToTopButton component */}
       <ScrollToTopButton />
+      <ScrollToTop /> {/* Add this right after Router */}
       <Header />
       <Routes>
         <Route path="/" element={<Hero />} />
@@ -40,3 +45,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+
