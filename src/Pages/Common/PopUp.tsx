@@ -80,7 +80,7 @@ const PopUp: React.FC<PopUpProps> = ({ isOpen, onClose, images }) => {
               <img 
                 src={image} 
                 alt={`Image ${idx + 1}`}
-                className="w-full h-auto md:h-[85vh] object-contain"
+                className="w-full h-auto md:h-[85vh] object-fill"
               />
             </div>
           ))}

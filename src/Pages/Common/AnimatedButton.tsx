@@ -50,14 +50,14 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   };
 
   // Shadow classes for each variant
-  const shadowClasses = {
-    primary: 'hover:shadow-lg hover:shadow-purple-500/50',
-    secondary: 'hover:shadow-lg hover:shadow-gray-500/50',
-    golden: 'hover:shadow-lg hover:shadow-[#CDAE64]/50',
-    white: 'hover:shadow-lg hover:shadow-gray-300/50',
-    dark: 'hover:shadow-lg hover:shadow-gray-900/50',
-    gradient: 'hover:shadow-lg hover:shadow-purple-500/50',
-  };
+  // const shadowClasses = {
+  //   primary: 'hover:shadow-lg hover:shadow-purple-500/50',
+  //   secondary: 'hover:shadow-lg hover:shadow-gray-500/50',
+  //   golden: 'hover:shadow-lg hover:shadow-[#CDAE64]/50',
+  //   white: 'hover:shadow-lg hover:shadow-gray-300/50',
+  //   dark: 'hover:shadow-lg hover:shadow-gray-900/50',
+  //   gradient: 'hover:shadow-lg hover:shadow-purple-500/50',
+  // };
 
   return (
  <button
@@ -68,7 +68,6 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
     relative overflow-hidden
     ${sizeClasses[size]}
     ${variantClasses[variant]}
-    ${shadowClasses[variant]}
     ${fullWidth ? 'w-full' : ''}
     ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
     rounded-lg font-semibold
