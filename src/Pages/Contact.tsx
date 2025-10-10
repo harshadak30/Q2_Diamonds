@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import type { ContactFormData } from "./Common/useContactUs";
 import useContactUs from "./Common/useContactUs";
+import AnimatedButton from "./Common/AnimatedButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -222,27 +223,28 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="flex flex-col text-white bg-black">
       {/* Form Section */}
-      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 md:pt-40 lg:pt-50 pb-12 sm:pb-16 md:pb-20">
-        <div className="w-full max-w-2xl p-4 sm:p-6 md:p-8 rounded-lg shadow-md">
+      <div className="flex items-center justify-center flex-1 px-4 pt-20 pb-12 sm:px-6 lg:px-8 sm:pt-32 md:pt-40 lg:pt-50 sm:pb-16 md:pb-2">
+        <div className="pt-20 rounded-lg shadow-md md:w-2xl md:p-9 lg:p-20 xl:p-9">
           <h1
             ref={titleRef}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-8 sm:mb-10 md:mb-12 text-white title-animation leading-tight max-w-full md:max-w-[95%]"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold mb-8 sm:mb-10 md:mb-12 text-white title-animation leading-tight max-w-full md:max-w-[85%]"
           >
-            PLEASE CONTACT US FOR ANY QUERIES
+            PLEASE CONTACT US FOR ANY <br />
+            QUERIES
           </h1>
 
           {/* Success Message */}
           {success && (
-            <div className="mb-6 p-3 sm:p-4 bg-green-600 text-white rounded-md transition-opacity duration-500 text-sm sm:text-base">
+            <div className="p-3 mb-6 text-sm text-white transition-opacity duration-500 bg-green-600 rounded-md sm:p-4 sm:text-base">
               ✓ Thank you! Your form has been submitted.
             </div>
           )}
 
           {/* General Error Message */}
           {error && !Object.keys(fieldErrors).length && (
-            <div className="mb-6 p-3 sm:p-4 bg-red-600 text-white rounded-md animate-fade-in text-sm sm:text-base">
+            <div className="p-3 mb-6 text-sm text-white bg-red-600 rounded-md sm:p-4 animate-fade-in sm:text-base">
               {error}
             </div>
           )}
@@ -258,13 +260,13 @@ const ContactUs: React.FC = () => {
                 onChange={handleChange}
                 pattern="[a-zA-Z\s]*"
                 className={`w-full px-3 sm:px-4 py-4 sm:py-5 border ${
-                  fieldErrors.name ? "border-red-500" : "border-gray-600"
+                  fieldErrors.name ? "border-red-500" : "border-gray-800"
                 } bg-black text-gray-400 rounded-md focus:outline-none text-base sm:text-lg md:text-xl disabled:opacity-50 disabled:cursor-not-allowed transition-colors`}
                 required
                 disabled={loading}
               />
               {fieldErrors.name && (
-                <p className="mt-2 text-xs sm:text-sm text-red-500">
+                <p className="mt-2 text-xs text-red-500 sm:text-sm">
                   {fieldErrors.name}
                 </p>
               )}
@@ -282,13 +284,13 @@ const ContactUs: React.FC = () => {
                 className={`w-full px-3 sm:px-4 py-4 sm:py-5 border ${
                   validationErrors.email || fieldErrors.email
                     ? "border-red-500"
-                    : "border-gray-600"
+                    : "border-gray-800"
                 } bg-black text-gray-400 rounded-md focus:outline-none text-base sm:text-lg md:text-xl disabled:opacity-50 disabled:cursor-not-allowed transition-colors`}
                 required
                 disabled={loading}
               />
               {(validationErrors.email || fieldErrors.email) && (
-                <p className="mt-2 text-xs sm:text-sm text-red-500">
+                <p className="mt-2 text-xs text-red-500 sm:text-sm">
                   {validationErrors.email || fieldErrors.email}
                 </p>
               )}
@@ -309,14 +311,14 @@ const ContactUs: React.FC = () => {
                 className={`w-full px-3 sm:px-4 py-4 sm:py-5 border ${
                   validationErrors.phone_number || fieldErrors.phone_number
                     ? "border-red-500"
-                    : "border-gray-600"
+                    : "border-gray-800"
                 } bg-black text-gray-400 rounded-md focus:outline-none text-base sm:text-lg md:text-xl disabled:opacity-50 disabled:cursor-not-allowed transition-colors`}
                 required
                 disabled={loading}
               />
               {(validationErrors.phone_number || fieldErrors.phone_number) && (
-                <p className="mt-2 text-xs sm:text-sm text-red-500">
-                  ✗ {validationErrors.phone_number || fieldErrors.phone_number}
+                <p className="mt-2 text-xs text-red-500 sm:text-sm">
+                  {validationErrors.phone_number || fieldErrors.phone_number}
                 </p>
               )}
             </div>
@@ -330,48 +332,46 @@ const ContactUs: React.FC = () => {
                 onChange={handleChange}
                 rows={4}
                 className={`w-full px-3 sm:px-4 py-4 sm:py-5 border ${
-                  fieldErrors.message ? "border-red-500" : "border-gray-600"
+                  fieldErrors.message ? "border-red-500" : "border-gray-800"
                 } bg-black text-gray-400 rounded-md focus:outline-none text-base sm:text-lg md:text-xl disabled:opacity-50 disabled:cursor-not-allowed transition-colors resize-none`}
                 required
                 disabled={loading}
               />
               {fieldErrors.message && (
-                <p className="mt-2 text-xs sm:text-sm text-red-500">
-                  ✗ {fieldErrors.message}
+                <p className="mt-2 text-xs text-red-500 sm:text-sm">
+                  {fieldErrors.message}
                 </p>
               )}
             </div>
 
             <div className="flex justify-center py-4 sm:py-6">
-              <button
+              <AnimatedButton
                 type="submit"
+                variant="gradient"
                 disabled={loading}
-                className="w-full sm:w-3/4 md:w-2/3 lg:w-1/3 bg-white text-black font-semibold py-3 sm:py-4 px-4 sm:px-6 rounded-lg hover:bg-gray-200 cursor-pointer hover:text-black focus:outline-none transition disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-black text-sm sm:text-base md:text-lg"
+                className=" px-4 py-3 text-sm font-semibold !text-black transition bg-white rounded-lg cursor-pointer sm:w-3/4 md:w-2/3 lg:w-1/3 sm:py-4 sm:px-6 hover:!text-white focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:!text-black sm:text-base md:text-lg"
               >
                 {loading ? "SUBMITTING..." : "SUBMIT NOW"}
-              </button>
+              </AnimatedButton>
             </div>
           </form>
         </div>
       </div>
 
       {/* Contact Info */}
-      <div className="bg-black rounded-lg shadow-md px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-24 lg:py-32 xl:py-72">
-        <div
-          className="flex flex-col sm:flex-row justify-between items-center sm:items-start
- space-y-8 sm:space-y-0 sm:space-x-6 md:space-x-8 lg:space-x-12 w-full pl-6"
-        >
+      <div className="px-4 py-12 bg-black rounded-lg shadow-md sm:px-8 md:px-12 lg:px-20 sm:py-16 md:py-24 lg:py-32 xl:py-52">
+        <div className="flex flex-col items-center justify-center w-full space-y-8 text-center sm:flex-row sm:items-start sm:justify-center sm:space-y-0 sm:space-x-6 md:space-x-8 lg:space-x-4">
           <div
             ref={emailRef}
             style={{ opacity: 0 }}
-            className="w-full sm:w-1/3"
+            className="w-full sm:w-1/4"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3 sm:mb-4">
+            <h2 className="mb-3 text-2xl font-semibold text-white sm:text-3xl md:text-4xl lg:text-4xl sm:mb-4">
               Email
             </h2>
             <a
               href="mailto:contact@gzdiamonds.com"
-              className="text-white hover:text-blue-300 transition-colors duration-200 text-sm sm:text-base md:text-lg break-all"
+              className="text-base text-white break-all transition-colors duration-200 hover:text-blue-300 sm:text-lg md:text-xl"
             >
               contact@gzdiamonds.com
             </a>
@@ -380,14 +380,14 @@ const ContactUs: React.FC = () => {
           <div
             ref={phoneRef}
             style={{ opacity: 0 }}
-            className="w-full sm:w-1/3"
+            className="w-full sm:w-1/4"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3 sm:mb-4">
+            <h2 className="mb-3 text-2xl font-semibold text-white sm:text-3xl md:text-4xl lg:text-4xl sm:mb-4">
               Phone
             </h2>
             <a
               href="tel:+16803220714"
-              className="text-white hover:text-blue-300 transition-colors duration-200 text-sm sm:text-base md:text-lg"
+              className="text-base text-white transition-colors duration-200 hover:text-blue-300 sm:text-lg md:text-xl"
             >
               +1 (680) 322-0714
             </a>
@@ -396,14 +396,14 @@ const ContactUs: React.FC = () => {
           <div
             ref={locationRef}
             style={{ opacity: 0 }}
-            className="w-full sm:w-1/3"
+            className="w-full sm:w-1/4"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3 sm:mb-4">
+            <h2 className="mb-3 text-2xl font-semibold text-white sm:text-3xl md:text-4xl lg:text-4xl sm:mb-4">
               Location
             </h2>
             <Link
               to=""
-              className="text-white hover:text-blue-300 transition-colors duration-200 text-sm sm:text-base md:text-lg"
+              className="text-base text-white transition-colors duration-200 hover:text-blue-300 sm:text-lg md:text-xl"
             >
               USA
             </Link>

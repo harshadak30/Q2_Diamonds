@@ -47,7 +47,7 @@ const Thermal = () => {
 
       {/* Description Section */}
       <section className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-25 py-6 sm:py-8 md:py-10">
-        <p className="font-galderglynn text-[#767676] text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-wide sm:tracking-widest text-center md:text-left text-justify">
+        <p className="font-galderglynn text-[#767676] text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-wide sm:tracking-widest text-center md:text-left ">
           Diamond is the highest thermally conductive solid material known to
           man, outperforming copper, aluminum nitride, and even SiC by an order
           of magnitude. With QTG line of products, this property becomes
@@ -118,7 +118,7 @@ const Thermal = () => {
       {/* Photonics */}
       <div
         onClick={() => openPopup("photonics")}
-        className="relative overflow-hidden group cursor-pointer border-b-2 md:border-b-0 border-r-0 md:border-r-2 border-[#CDAE64] sm:border-b-2 md:border-b-0"
+        className="relative overflow-hidden group cursor-pointer border-b-2 md:border-b-0 border-r-0 md:border-r-2 border-[#CDAE64] sm:border-b-2 "
       >
         <div className="p-1">
           <h3 className="text-black text-sm lg:text-lg font-semibold tracking-wide text-center mb-3 sm:mb-4">
