@@ -1,196 +1,911 @@
 
 
-// interface ApplicationsPopupProps {
-//   isOpen: boolean;
+// import Popup1 from "../../assets/GanDiamonds/RFpopup1.png";
+// import Popup2 from "../../assets/GanDiamonds/RFpopup2.png";
+// import Popup3 from "../../assets/GanDiamonds/RFpopup3.png";
+// import PopUp4 from "../../assets/GanDiamonds/RFpopup4.png";
+// import EVpopup1 from "../../assets/GanDiamonds/EV_popup1.png";
+// import EVpopup2 from "../../assets/GanDiamonds/EV_popup2.png";
+// import EVpopup3 from "../../assets/GanDiamonds/EV_popup3.png";
+// import Computingpopup1 from "../../assets/GanDiamonds/Computing_popup_1.png";
+// import Computingpopup2 from "../../assets/GanDiamonds/Computing_popup_2.png";
+// import Computingpopup3 from "../../assets/GanDiamonds/Computing_popup_3.png";
+
+// import "./RFModal.css";
+
+// interface MetricSection {
+//   number?: string;
+//   description: string;
+//   image?: string;
+//   isSpecial?: boolean;
+//   hasLineBreaks?: boolean;
+//   isVoltage?: boolean;
+// }
+
+// interface ModalColumn {
+//   title: string;
+//   image: string;
+//   metrics: MetricSection[];
+// }
+
+// interface PopupProps {
 //   onClose: () => void;
 // }
 
-// const ApplicationsPopup: React.FC<ApplicationsPopupProps> = ({ isOpen, onClose }) => {
-//   const applications = [
+// // Existing RF Modal (unchanged)
+// export const RFModal: React.FC<PopupProps> = ({ onClose }) => {
+//   const modalData: ModalColumn[] = [
 //     {
-//       title: 'DEFENCE',
-//       image: 'https://via.placeholder.com/400x300/1a1a1a/fff?text=DEFENCE',
-//       specs: [
-//         { value: '3X', description: 'Higher power density' },
-//         { value: '~80%', description: 'Smaller devices' },
-//         { value: '10/10', description: 'MOHS Scale Highly Durable under Rigorous Condition' }
-//       ]
+//       title: "DEFENCE",
+//       image: Popup1,
+//       metrics: [
+//         { number: "3X", description: "Higher power density" },
+//         { number: "~80%", description: "Smaller devices" },
+//         {
+//           number: "10/10",
+//           description: "MOHS Scale Highly Durable under Rigorous Condition",
+//         },
+//       ],
 //     },
 //     {
-//       title: '5G/6G',
-//       image: 'https://via.placeholder.com/400x300/4a4a4a/fff?text=5G/6G',
-//       specs: [
-//         { value: 'HIGHEST', description: 'Linearity ensures signal fidelity' },
-//         { value: '100%', description: 'Linearity ensures signal fidelity' },
-//         { value: 'Best Balance of', description: 'Mobility, Power & Heat Management for 5G/6G Infrastructure' }
-//       ]
+//       title: "5G/6G",
+//       image: Popup2,
+//       metrics: [
+//         { number: "HIGHEST", description: "Linearity ensures signal fidelity" },
+//         {
+//           number: "100%",
+//           description: "Lower Junction Temperature 100% v/s GaN on SiC",
+//         },
+//         {
+//           description:
+//             "Best Balance of Mobility, Power & Heat Management for 5G/6G Infrastructure",
+//           isSpecial: true,
+//         },
+//       ],
 //     },
 //     {
-//       title: 'RADAR',
-//       image: 'https://via.placeholder.com/400x300/6a6a6a/fff?text=RADAR',
-//       specs: [
-//         { value: '5X', description: 'Thermal Conductivity than Gan on SiC' },
-//         { value: '', description: 'Frequency Capability: Ka-band and beyond' },
-//         { value: '80%', description: 'Efficiency (Pout / PDC)' }
-//       ]
-//     }
+//       title: "RADAR",
+//       image: Popup3,
+//       metrics: [
+//         { number: "5X", description: "Thermal Conductivity than GaN on SiC" },
+//         {
+//           image: PopUp4,
+//           description: "Frequency Capability: Ka-band and beyond",
+//         },
+//         { number: "80%", description: "Efficiency (Pout / PDC)" },
+//       ],
+//     },
 //   ];
 
-//   if (!isOpen) return null;
-
 //   return (
-//     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4 overflow-y-auto">
-//       <div className="bg-white rounded-lg shadow-2xl w-full max-w-5xl my-8">
-//         <div className="flex justify-between items-center p-4 border-b border-gray-200">
-//           <h2 className="text-xl font-bold text-gray-800">Applications</h2>
-//           <button 
-//             onClick={onClose}
-//             className="p-1 hover:bg-gray-100 rounded-full transition-colors"
-//           >
-//           </button>
-//         </div>
-        
-//         <div className="p-6">
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-//             {applications.map((app, index) => (
-//               <div key={index} className="flex flex-col">
-//                 <div className="relative h-48 bg-gray-900 rounded overflow-hidden mb-4">
-//                   <img 
-//                     src={app.image} 
-//                     alt={app.title}
-//                     className="w-full h-full object-cover"
-//                   />
-//                   <div className="absolute inset-0 flex items-center justify-center">
-//                     <h3 className="text-3xl font-bold text-white tracking-wider">{app.title}</h3>
-//                   </div>
-//                 </div>
-                
-//                 <div className="space-y-3">
-//                   {app.specs.map((spec, specIndex) => (
-//                     <div key={specIndex} className="text-center">
-//                       <div className="text-4xl font-bold text-amber-600 mb-1">
-//                         {spec.value}
-//                       </div>
-//                       <div className="text-xs text-gray-700 leading-tight px-2">
-//                         {spec.description}
-//                       </div>
-//                     </div>
-//                   ))}
-//                 </div>
+//     <div
+//       id="rfModal"
+//       className="fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center z-50"
+//       onClick={onClose}
+//     >
+//       <div
+//         className="bg-white max-w-3xl w-full overflow-hidden rounded-b-xl shadow-lg shadow-gray-500/50"
+//         onClick={(e) => e.stopPropagation()}
+//       >
+//         <div className="grid grid-cols-1 md:grid-cols-3 text-center">
+//           {modalData.map((column, index) => (
+//             <div
+//               key={column.title}
+//               className={`${
+//                 index < 2 ? "border-r-2 border-[#c09141]" : ""
+//               } flex flex-col items-center`}
+//             >
+//               {/* ====== Image & Title Section ====== */}
+//               <div className="relative w-full flex justify-center items-center">
+//                 <img
+//                   src={column.image}
+//                   // className="w-full font-[Galderglynnbd]"
+//                    className="w-full h-100 object-cover font-[Galderglynnbd]"
+//                   alt={column.title}
+//                 />
+//                 <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black font-bold font-[Galderglynnbd] text-3xl px-2 py-10 ">
+//                   {column.title}
+//                 </p>
 //               </div>
-//             ))}
-//           </div>
+
+//               {/* ====== Metrics Section ====== */}
+//               {column.metrics.map((metric, metricIndex) => (
+//                 <div
+//                   key={metricIndex}
+//                   className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
+//                 >
+//                   {/* Metric Number (Title) */}
+//                   {metric.number && (
+//                     <div
+//                       className={`font-[Galderglynnbd] tracking-tight leading-tight 
+//                         ${
+//                           column.title === "DEFENCE"
+//                             ? " text-4xl text-[#cdae64]"
+//                             : column.title === "5G/6G"
+//                             ? "text-[#cdae64] text-4xl "
+//                             : "text-[#cdae64] text-4xl"
+//                         }`}
+//                       style={{
+//                         fontWeight:
+//                           metricIndex === 0
+//                             ? "bold"
+//                             : metricIndex === 1
+//                             ? 600
+//                             : 500,
+//                         textShadow:
+//                           column.title === "RADAR"
+//                             ? "1px 1px 2px rgba(0,0,0,0.3)"
+//                             : "none",
+//                       }}
+//                     >
+//                       {metric.number}
+//                     </div>
+//                   )}
+
+//                   {/* Optional Metric Image */}
+//                   {metric.image && (
+//                     <img
+//                       src={metric.image}
+//                       className="w-5/7 h-12 mx-auto mb-2 metric-image"
+//                       alt=""
+//                     />
+//                   )}
+
+//                   <p
+//                     className={`text-sm font-[Montserratmd] px-2 text-semibold${
+//                       metric.isSpecial
+//                         ? " text-black-900"
+//                         : column.title === "DEFENCE"
+//                         ? "text-black-900"
+//                         : column.title === "5G/6G"
+//                         ? "text-black-900"
+//                         : "text-black-900 px-5"
+//                     }`}
+//                     style={{
+//                       lineHeight: "1.6",
+//                       fontSize: "0.80rem",
+//                     }}
+//                   >
+//                     <span
+//                       dangerouslySetInnerHTML={{
+//                         __html: metric.description
+//                           .replace(
+//                             "Mobility, Power & Heat Management",
+//                             `<strong style="color:#cdae64; padding:0 6px; text-justify: inter-word;">Mobility, Power & Heat Management</strong>`
+//                           )
+//                           .replace(
+//                             "Frequency Capability",
+//                             `<strong style=" padding:0 5px;">Frequency Capability</strong>`
+//                           ),
+//                       }}
+//                     />
+//                   </p>
+//                 </div>
+//               ))}
+//             </div>
+//           ))}
 //         </div>
 //       </div>
 //     </div>
 //   );
 // };
 
-// export default ApplicationsPopup;
+// // EV Systems Popup - Same layout but different styling
+// export const EVModal: React.FC<PopupProps> = ({ onClose }) => {
+//   const modalData: ModalColumn[] = [
+//     {
+//       title: "CHARGER",
+//       image: EVpopup1, // Replace with EV images
+//       metrics: [
+//         {
+//           number: "10X",
+//           description: "Faster switching frequency than silicon",
+//         },
+//         {
+//           number: "3X",
+//           description: "Power Density enabling ultrafast charging",
+//         },
+//         {
+//           number: "40-60%",
+//           description: "Smaller and Lighter",
+//         },
+//       ],
+//     },
+//     {
+//       title: "INVERTER",
+//       image: EVpopup2,
+//       metrics: [
+//         { number: "HIGHEST", description: "Efficiency v/s GaN on SiC & Si" },
+//         {
+//           number: "50%",
+//           description: "Size Reduction in Inverters",
+//         },
+//         {
+//           description: "Improved Reliability and Durability",
+//           isSpecial: true,
+//         },
+//       ],
+//     },
+   
 
+//     {
+//   title: "EV",
+//   image: EVpopup3,
+//   metrics: [
+//     {
+//       description: "Faster Motor Control & Better NVH (Noise, Vibration, Harshness)",
+//       isSpecial: true,
+//     },
+//     { 
+//       number: "", 
+//       description: "Supports<br/>800V+<br/>Architecture", // Added line breaks
+//       hasLineBreaks: true // Add this flag
+//     },
+//     { number: "5X", description: "Thermal Conductivity than Gan on SiC" },
+//   ],
+// },
+//   ];
 
-interface ApplicationsPopupProps {
-  isOpen: boolean;
+//   return (
+//     <div
+//       className="fixed inset-0 bg-black-100 backdrop-blur-xs flex items-center justify-center z-50"
+//       onClick={onClose}
+//     >
+//       <div
+//         className="bg-white max-w-3xl w-full overflow-hidden rounded-lg shadow-lg shadow-black-500/30 "
+//         onClick={(e) => e.stopPropagation()}
+//       >
+//         <div className="grid grid-cols-1 md:grid-cols-3 text-center">
+//           {modalData.map((column, index) => (
+//             <div
+//               key={column.title}
+//               className={`${
+//                 index < 2 ? "border-r-2  border-[#c09141]" : ""
+//               } flex flex-col items-center`}
+//             >
+//               <div className="relative w-full flex justify-center items-center">
+//                 <img src={column.image} className="w-full" alt={column.title} />
+//                 <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black font-bold text-3xl px-2 py-8  rounded-lg">
+//                   {column.title}
+//                 </p>
+//               </div>
+
+//               {/* {column.metrics.map((metric, metricIndex) => (
+//                 <div
+//                   key={metricIndex}
+//                   className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
+//                 >
+//                   {metric.number && (
+//                     <div className="font-medium text-4xl text-[#cdae64] -tracking-wide leading-wide font-[Galderglynnrg]">
+//                       {metric.number}
+//                     </div>
+//                   )}
+//                   {metric.image && (
+//                     <img
+//                       src={metric.image}
+//                       className="w-5/7 h-12 mx-auto mb-2"
+//                       alt=""
+//                     />
+//                   )}
+//                   <p className="text-sm px-2 font-[Montserratrg] text-black leading-relaxed">
+//                     {metric.description}
+//                   </p>
+//                 </div>
+//               ))} */}
+//               {column.metrics.map((metric, metricIndex) => (
+//   <div
+//     key={metricIndex}
+//     className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
+//   >
+//     {metric.number && (
+//       <div className="font-semibold text-4xl text-[#cdae64] -tracking-wide leading-wide font-[Galderglynnrg]">
+//         {metric.number}
+//       </div>
+//     )}
+//     {metric.image && (
+//       <img
+//         src={metric.image}
+//         className="w-5/7 h-12 mx-auto mb-2"
+//         alt=""
+//       />
+//     )}
+//     <p className="text-sm px-2 font-[Montserratrg] text-black leading-relaxed">
+//        {metric.hasLineBreaks ? (
+//     <span
+//       dangerouslySetInnerHTML={{
+//         __html: metric.description
+//           .replace(/<br\/>/g, '<br/>') // Ensure line breaks work
+//       }}
+//     />
+//   ) : metric.isVoltage ? (
+//     ""
+//   ) : metric.description.includes("Faster Motor Control") ? (
+//         <span
+//           dangerouslySetInnerHTML={{
+//             __html: metric.description
+//               .replace(
+//                 "Faster Motor Control",
+//                 `<strong style="color:#cdae64;">Faster Motor Control</strong>`
+//               )
+//               .replace(
+//                 "NVH",
+//                 `<strong style="color:#cdae64;">NVH</strong>`
+//               )
+//               // .replace(
+//               //   "Noise, Vibration, Harshness",
+//               //   `<strong style="color:#cdae64;">Noise, Vibration, Harshness</strong>`
+//               // ),
+//           }}
+//         />
+//       ) : metric.description.includes("Reliability") ? (
+//         <span
+//           dangerouslySetInnerHTML={{
+//             __html: metric.description
+//               .replace(
+//                 "Reliability",
+//                 `<strong style="color:#cdae64;">Reliability</strong>`
+//               )
+//                 .replace(
+//                 "and",
+//                 `<strong style="color:#cdae64;">and</strong>`
+//               )
+//               .replace(
+//                 "Durability",
+//                 `<strong style="color:#cdae64;">Durability</strong>`
+//               ),
+//           }}
+//         />
+//       ) : (
+//         metric.description
+//       )}
+//     </p>
+//   </div>
+// ))}
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// // Computing Popup - Same layout but different styling
+// export const ComputingModal: React.FC<PopupProps> = ({ onClose }) => {
+//   const modalData: ModalColumn[] = [
+//     {
+//       title: "GPU",
+//       image: Computingpopup1, // Replace with computing images
+//       metrics: [
+//         { number: "5X", description: "Thermal Conductivity than Gan on SiC" },
+//         { number: "10-20X", description: "Lower Junction Heating" },
+//         {
+//           description: "Stable Performance Without Throttling",
+//           isSpecial: true,
+//         },
+//       ],
+//     },
+//     {
+//       title: "DATA SERVER",
+//       image: Computingpopup2,
+//       metrics: [
+//         { number: "DOUBLES", description: "Components Lifetime (MTBF)" },
+//         {
+//           number: "50%",
+//           description: "Less Cooling Requirement",
+//         },
+//         {
+//           number: "2-4X",
+//           description: "Power per unit area",
+//         },
+//       ],
+//     },
+//     {
+//       title: "AI",
+//       image: Computingpopup3,
+//       metrics: [
+//         { number: "10-15%", description: "Lower Latency" },
+//         { number: "20-30%", description: "more AI Training Thoroughput" },
+
+//         { number: "5X", description: "rack compute density (in Flops)" },
+//       ],
+//     },
+//   ];
+
+//   return (
+//     <div
+//       className="fixed inset-0 bg-black-100 backdrop-blur-lg flex items-center justify-center z-50"
+//       onClick={onClose}
+//     >
+//       <div
+//         className="bg-white max-w-3xl w-full overflow-hidden rounded-xl shadow-lg shadow-black-500/20 "
+//         onClick={(e) => e.stopPropagation()}
+//       >
+//         <div className="grid grid-cols-1 md:grid-cols-3 text-center">
+//           {modalData.map((column, index) => (
+//             <div
+//               key={column.title}
+//               className={`${
+//                 index < 2 ? "border-r-2 border-[#c09141]" : ""
+//               } flex flex-col items-center`}
+//             >
+//               <div className="relative w-full flex justify-center items-center">
+//                 <img
+//                   src={column.image}
+//                   className="w-full opacity-90"
+//                   alt={column.title}
+//                 />
+//                 <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black font-bold text-3xl px-2 py-8  rounded-lg ">
+//                   {column.title}
+//                 </p>
+//               </div>
+
+//               {column.metrics.map((metric, metricIndex) => (
+//                 <div
+//                   key={metricIndex}
+//                   className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
+//                 >
+//                   {metric.number && (
+//                     <div className="font-medium text-4xl text-[#cdae64] -tracking-wide leading-wide font-[Galderglynnrg]">
+//                       {metric.number}
+//                     </div>
+//                   )}
+//                   {metric.image && (
+//                     <img
+//                       src={metric.image}
+//                       className="w-5/7 h-12 mx-auto mb-2 filter brightness-125"
+//                       alt=""
+//                     />
+//                   )}
+//                   <p className="text-sm  font-[Montserratmd] text-black leading-relaxed">
+//                     {metric.description}
+//                   </p>
+//                 </div>
+//               ))}
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// // Default export for backward compatibility
+// export default RFModal;
+
+import Popup1 from "../../assets/GanDiamonds/RFpopup1.png";
+import Popup2 from "../../assets/GanDiamonds/RFpopup2.png";
+import Popup3 from "../../assets/GanDiamonds/RFpopup3.png";
+import PopUp4 from "../../assets/GanDiamonds/RFpopup4.png";
+import EVpopup1 from "../../assets/GanDiamonds/EV_popup1.png";
+import EVpopup2 from "../../assets/GanDiamonds/EV_popup2.png";
+import EVpopup3 from "../../assets/GanDiamonds/EV_popup3.png";
+import Computingpopup1 from "../../assets/GanDiamonds/Computing_popup_1.png";
+import Computingpopup2 from "../../assets/GanDiamonds/Computing_popup_2.png";
+import Computingpopup3 from "../../assets/GanDiamonds/Computing_popup_3.png";
+
+import "./RFModal.css";
+
+interface MetricSection {
+  number?: string;
+  description: string;
+  image?: string;
+  isSpecial?: boolean;
+  hasLineBreaks?: boolean;
+  isVoltage?: boolean;
+}
+
+interface ModalColumn {
+  title: string;
+  image: string;
+  metrics: MetricSection[];
+}
+
+interface PopupProps {
   onClose: () => void;
 }
 
-const ApplicationsPopup: React.FC<ApplicationsPopupProps> = ({ isOpen, onClose }) => {
-  const applications = [
+// Existing RF Modal (unchanged except mobile fixes)
+export const RFModal: React.FC<PopupProps> = ({ onClose }) => {
+  const modalData: ModalColumn[] = [
     {
-      title: 'DEFENCE',
-      image: '/images/defence.jpg', // Replace with your actual image path
-      specs: [
-        { value: '3X', description: 'Higher power density' },
-        { value: '80%', description: 'Smaller devices' },
-        { value: '10/10', description: 'MOHS Scale Highly Durable under Rigorous Condition' }
-      ]
+      title: "DEFENCE",
+      image: Popup1,
+      metrics: [
+        { number: "3X", description: "Higher power density" },
+        { number: "~80%", description: "Smaller devices" },
+        {
+          number: "10/10",
+          description: "MOHS Scale Highly Durable under Rigorous Condition",
+        },
+      ],
     },
     {
-      title: 'RADAR',
-      image: '/images/radar.jpg', // Replace with your actual image path
-      specs: [
-        { value: 'HIGHEST', description: 'Linearity ensures signal fidelity' },
-        { value: '100%', description: 'Lower Junction Temperature 100% v/s GaN on SiC' },
-        { value: 'Best Balance of', description: 'Mobility, Power & Heat Management for 5G/6G Infrastructure' }
-      ]
+      title: "5G/6G",
+      image: Popup2,
+      metrics: [
+        { number: "HIGHEST", description: "Linearity ensures signal fidelity" },
+        {
+          number: "100%",
+          description: "Lower Junction Temperature 100% v/s GaN on SiC",
+        },
+        {
+          description:
+            "Best Balance of Mobility, Power & Heat Management for 5G/6G Infrastructure",
+          isSpecial: true,
+        },
+      ],
     },
     {
-      title: '5G/6G',
-      image: '/images/5g-6g.jpg', // Replace with your actual image path
-      specs: [
-        { value: '5X', description: 'Thermal Conductivity than GaN on SiC' },
-        { value: 'Ka-band and beyond', description: 'Frequency Capability' },
-        { value: '80%', description: 'Efficiency (Pout / PDC)' }
-      ]
-    }
+      title: "RADAR",
+      image: Popup3,
+      metrics: [
+        { number: "5X", description: "Thermal Conductivity than GaN on SiC" },
+        {
+          image: PopUp4,
+          description: "Frequency Capability: Ka-band and beyond",
+        },
+        { number: "80%", description: "Efficiency (Pout / PDC)" },
+      ],
+    },
   ];
 
-  // Handle click outside the popup
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  if (!isOpen) return null;
-
   return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto"
-      onClick={handleBackdropClick}
+    <div
+      id="rfModal"
+      className="fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center z-50 p-4 md:p-0"
+      onClick={onClose}
     >
-      <div className="bg-white rounded-lg shadow-2xl w-full max-w-5xl my-8">
-        {/* Header */}
-        <div className="flex justify-between items-center p-4 border-b border-gray-200">
-          <h2 className="text-xl font-bold text-gray-800">Applications</h2>
-          <button 
-            onClick={onClose}
-            className="p-1 hover:bg-gray-100 rounded-full transition-colors duration-200"
-            aria-label="Close"
-          >
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        
-        {/* Content */}
-        <div className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {applications.map((app, index) => (
-              <div key={index} className="flex flex-col">
-                {/* Image Container */}
-                <div className="relative h-48 bg-gray-900 rounded-lg overflow-hidden mb-4 shadow-md">
-                  <img 
-                    src={app.image} 
-                    alt={app.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                    <h3 className="text-3xl font-bold text-white tracking-wider">{app.title}</h3>
-                  </div>
-                </div>
-                
-                {/* Specifications */}
-                <div className="space-y-4">
-                  {app.specs.map((spec, specIndex) => (
-                    <div key={specIndex} className="text-center">
-                      <div className="text-4xl font-bold text-amber-600 mb-1">
-                        {spec.value}
-                      </div>
-                      <div className="text-xs text-gray-700 leading-tight px-2">
-                        {spec.description}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+      <div
+        className="bg-white max-w-3xl w-full mx-4 md:mx-0 overflow-hidden rounded-b-xl shadow-lg shadow-gray-500/50"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 text-center overflow-x-auto md:overflow-x-visible">
+          {modalData.map((column, index) => (
+            <div
+              key={column.title}
+              className={`${
+                index < 2 ? "border-r-2 border-[#c09141]" : ""
+              } flex flex-col items-center min-w-[280px] md:min-w-0`}
+            >
+              {/* ====== Image & Title Section ====== */}
+              <div className="relative w-full flex justify-center items-center">
+                <img
+                  src={column.image}
+                  className="w-full h-100 object-cover font-[Galderglynnbd]"
+                  alt={column.title}
+                />
+                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black font-bold font-[Galderglynnbd] text-3xl px-2 py-10 ">
+                  {column.title}
+                </p>
               </div>
-            ))}
-          </div>
+
+              {/* ====== Metrics Section ====== */}
+              {column.metrics.map((metric, metricIndex) => (
+                <div
+                  key={metricIndex}
+                  className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
+                >
+                  {/* Metric Number (Title) */}
+                  {metric.number && (
+                    <div
+                      className={`font-[Galderglynnbd] tracking-tight leading-tight 
+                        ${
+                          column.title === "DEFENCE"
+                            ? " text-4xl text-[#cdae64]"
+                            : column.title === "5G/6G"
+                            ? "text-[#cdae64] text-4xl "
+                            : "text-[#cdae64] text-4xl"
+                        }`}
+                      style={{
+                        fontWeight:
+                          metricIndex === 0
+                            ? "bold"
+                            : metricIndex === 1
+                            ? 600
+                            : 500,
+                        textShadow:
+                          column.title === "RADAR"
+                            ? "1px 1px 2px rgba(0,0,0,0.3)"
+                            : "none",
+                      }}
+                    >
+                      {metric.number}
+                    </div>
+                  )}
+
+                  {/* Optional Metric Image */}
+                  {metric.image && (
+                    <img
+                      src={metric.image}
+                      className="w-5/7 h-12 mx-auto mb-2 metric-image"
+                      alt=""
+                    />
+                  )}
+
+                  <p
+                    className={`text-sm font-[Montserratmd] px-2 text-semibold${
+                      metric.isSpecial
+                        ? " text-black-900"
+                        : column.title === "DEFENCE"
+                        ? "text-black-900"
+                        : column.title === "5G/6G"
+                        ? "text-black-900"
+                        : "text-black-900 px-5"
+                    }`}
+                    style={{
+                      lineHeight: "1.6",
+                      fontSize: "0.80rem",
+                    }}
+                  >
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: metric.description
+                          .replace(
+                            "Mobility, Power & Heat Management",
+                            `<strong style="color:#cdae64; padding:0 6px; text-justify: inter-word;">Mobility, Power & Heat Management</strong>`
+                          )
+                          .replace(
+                            "Frequency Capability",
+                            `<strong style=" padding:0 5px;">Frequency Capability</strong>`
+                          ),
+                      }}
+                    />
+                  </p>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default ApplicationsPopup;
+// EV Systems Popup - Same layout but different styling
+export const EVModal: React.FC<PopupProps> = ({ onClose }) => {
+  const modalData: ModalColumn[] = [
+    {
+      title: "CHARGER",
+      image: EVpopup1,
+      metrics: [
+        {
+          number: "10X",
+          description: "Faster switching frequency than silicon",
+        },
+        {
+          number: "3X",
+          description: "Power Density enabling ultrafast charging",
+        },
+        {
+          number: "40-60%",
+          description: "Smaller and Lighter",
+        },
+      ],
+    },
+    {
+      title: "INVERTER",
+      image: EVpopup2,
+      metrics: [
+        { number: "HIGHEST", description: "Efficiency v/s GaN on SiC & Si" },
+        {
+          number: "50%",
+          description: "Size Reduction in Inverters",
+        },
+        {
+          description: "Improved Reliability and Durability",
+          isSpecial: true,
+        },
+      ],
+    },
+    {
+      title: "EV",
+      image: EVpopup3,
+      metrics: [
+        {
+          description: "Faster Motor Control & Better NVH (Noise, Vibration, Harshness)",
+          isSpecial: true,
+        },
+        { 
+          description: "Supports<br/>800V+<br/>Architecture",
+          hasLineBreaks: true
+        },
+        { number: "5X", description: "Thermal Conductivity than Gan on SiC" },
+      ],
+    },
+  ];
+
+  return (
+    <div
+      className="fixed inset-0 bg-black-100 backdrop-blur-xs flex items-center justify-center z-50 p-4 md:p-0"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white max-w-3xl w-full mx-4 md:mx-0 overflow-hidden rounded-lg shadow-lg shadow-black-500/30"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 text-center overflow-x-auto md:overflow-x-visible">
+          {modalData.map((column, index) => (
+            <div
+              key={column.title}
+              className={`${
+                index < 2 ? "border-r-2  border-[#c09141]" : ""
+              } flex flex-col items-center min-w-[280px] md:min-w-0`}
+            >
+              <div className="relative w-full flex justify-center items-center">
+                <img src={column.image} className="w-full" alt={column.title} />
+                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black font-bold text-3xl px-2 py-8  rounded-lg">
+                  {column.title}
+                </p>
+              </div>
+
+              {column.metrics.map((metric, metricIndex) => (
+                <div
+                  key={metricIndex}
+                  className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
+                >
+                  {metric.number && (
+                    <div className="font-semibold text-4xl text-[#cdae64] -tracking-wide leading-wide font-[Galderglynnrg]">
+                      {metric.number}
+                    </div>
+                  )}
+                  {metric.image && (
+                    <img
+                      src={metric.image}
+                      className="w-5/7 h-12 mx-auto mb-2"
+                      alt=""
+                    />
+                  )}
+                  <p className="text-sm px-2 font-[Montserratrg] text-black leading-relaxed">
+                    {metric.hasLineBreaks ? (
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: metric.description
+                        }}
+                      />
+                    ) : metric.description.includes("Faster Motor Control") ? (
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: metric.description
+                            .replace(
+                              "Faster Motor Control",
+                              `<strong style="color:#cdae64;">Faster Motor Control</strong>`
+                            )
+                            .replace(
+                              "NVH",
+                              `<strong style="color:#cdae64;">NVH</strong>`
+                            )
+                        }}
+                      />
+                    ) : metric.description.includes("Reliability") ? (
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: metric.description
+                            .replace(
+                              "Reliability",
+                              `<strong style="color:#cdae64;">Reliability</strong>`
+                            )
+                            .replace(
+                              "and",
+                              `<strong style="color:#cdae64;">and</strong>`
+                            )
+                            .replace(
+                              "Durability",
+                              `<strong style="color:#cdae64;">Durability</strong>`
+                            ),
+                        }}
+                      />
+                    ) : (
+                      metric.description
+                    )}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Computing Popup - Same layout but different styling
+export const ComputingModal: React.FC<PopupProps> = ({ onClose }) => {
+  const modalData: ModalColumn[] = [
+    {
+      title: "GPU",
+      image: Computingpopup1,
+      metrics: [
+        { number: "5X", description: "Thermal Conductivity than Gan on SiC" },
+        { number: "10-20X", description: "Lower Junction Heating" },
+        {
+          description: "Stable Performance Without Throttling",
+          isSpecial: true,
+        },
+      ],
+    },
+    {
+      title: "DATA SERVER",
+      image: Computingpopup2,
+      metrics: [
+        { number: "DOUBLES", description: "Components Lifetime (MTBF)" },
+        {
+          number: "50%",
+          description: "Less Cooling Requirement",
+        },
+        {
+          number: "2-4X",
+          description: "Power per unit area",
+        },
+      ],
+    },
+    {
+      title: "AI",
+      image: Computingpopup3,
+      metrics: [
+        { number: "10-15%", description: "Lower Latency" },
+        { number: "20-30%", description: "more AI Training Thoroughput" },
+        { number: "5X", description: "rack compute density (in Flops)" },
+      ],
+    },
+  ];
+
+  return (
+    <div
+      className="fixed inset-0 bg-black-100 backdrop-blur-lg flex items-center justify-center z-50 p-4 md:p-0"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white max-w-3xl w-full mx-4 md:mx-0 overflow-hidden rounded-xl shadow-lg shadow-black-500/20"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 text-center overflow-x-auto md:overflow-x-visible">
+          {modalData.map((column, index) => (
+            <div
+              key={column.title}
+              className={`${
+                index < 2 ? "border-r-2 border-[#c09141]" : ""
+              } flex flex-col items-center min-w-[280px] md:min-w-0`}
+            >
+              <div className="relative w-full flex justify-center items-center">
+                <img
+                  src={column.image}
+                  className="w-full opacity-90"
+                  alt={column.title}
+                />
+                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black font-bold text-3xl px-2 py-8  rounded-lg ">
+                  {column.title}
+                </p>
+              </div>
+
+              {column.metrics.map((metric, metricIndex) => (
+                <div
+                  key={metricIndex}
+                  className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
+                >
+                  {metric.number && (
+                    <div className="font-medium text-4xl text-[#cdae64] -tracking-wide leading-wide font-[Galderglynnrg]">
+                      {metric.number}
+                    </div>
+                  )}
+                  {metric.image && (
+                    <img
+                      src={metric.image}
+                      className="w-5/7 h-12 mx-auto mb-2 filter brightness-125"
+                      alt=""
+                    />
+                  )}
+                  <p className="text-sm  font-[Montserratmd] text-black leading-relaxed">
+                    {metric.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Default export for backward compatibility
+export default RFModal;

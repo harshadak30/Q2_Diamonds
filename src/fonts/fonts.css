@@ -46,3 +46,11 @@
   font-weight: 600;
   font-style: normal;
 }
+
+
+@font-face {
+  font-family: 'Aku&Kamu';
+  src: url('./Aku&Kamu.otf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
