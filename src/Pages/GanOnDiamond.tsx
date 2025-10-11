@@ -300,7 +300,6 @@
 // export default GanOnDiamond;
 
 
-
 import React, { useState } from "react";
 import Rquestbutton from "./Common/Rquestbutton";
 import GanOnDiamondImage from "../assets/gandiamonds-hero.png";
@@ -318,11 +317,14 @@ import Computingpopup2 from "../assets/Computingpopup2.png";
 import Computingpopup3 from "../assets/Computingpopup3.png";
 import PopUp from "./Common/PopUp";
 import { usePopup } from "./Common/usePopup";
-import ApplicationsPopup from "./Common/a";
+// import GanDiamondsPopup from "./Common/a";
+import RFModal, { EVModal, ComputingModal } from "./Common/a";
+
 
 const GanOnDiamond: React.FC = () => {
   const { openPopup, closePopup, isPopupOpen } = usePopup();
-  const [isPopupOpens, setIsPopupOpens] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+const [activePopup, setActivePopup] = useState<'rf' | 'ev' | 'computing' | null>(null);
 
   const popupData = {
     laser: [RFpopup2, RFpopup1, RFpopup],
@@ -512,7 +514,8 @@ const GanOnDiamond: React.FC = () => {
     <div className="lg:col-span-6 grid grid-cols-1 md:grid-cols-3">
       {/* RF Systems */}
       <div
-        onClick={() => setIsPopupOpens(true)}
+      //  onClick={() => setShowPopup(true)}
+      onClick={() => setActivePopup('rf')}
         className="relative overflow-hidden group cursor-pointer border-b-2 md:border-b-0 md:border-l-2 md:border-r-2  border-[#C8AB6E]"
       >
         <div className="p-1">
@@ -531,7 +534,8 @@ const GanOnDiamond: React.FC = () => {
 
       {/* EV Systems */}
       <div
-        onClick={() => openPopup("quantum")}
+        // onClick={() => openPopup("quantum")}
+        onClick={() => setActivePopup('ev')}
         className="relative overflow-hidden group cursor-pointer border-b-2 md:border-b-0 md:border-r-2 border-[#C8AB6E]"
       >
         <div className="p-1">
@@ -550,7 +554,8 @@ const GanOnDiamond: React.FC = () => {
 
       {/* Computing */}
       <div
-        onClick={() => openPopup("space")}
+        // onClick={() => openPopup("space")}
+        onClick={() => setActivePopup('computing')}
         className="relative overflow-hidden group cursor-pointer md:border-b-0  border-[#C8AB6E]"
       >
         <div className="p-1">
@@ -570,10 +575,10 @@ const GanOnDiamond: React.FC = () => {
   </div>
 </section>
       <Rquestbutton />
-  <ApplicationsPopup 
-        isOpen={isPopupOpens} 
-        onClose={() => setIsPopupOpens(false)} 
-      />
+      {/* {showPopup && <GanDiamondsPopup onClose={() => setShowPopup(false)} />} */}
+{activePopup === 'rf' && <RFModal onClose={() => setActivePopup(null)} />}
+{activePopup === 'ev' && <EVModal onClose={() => setActivePopup(null)} />}
+{activePopup === 'computing' && <ComputingModal onClose={() => setActivePopup(null)} />}
       {/* Popups */}
       <PopUp
         isOpen={isPopupOpen("laser")}
