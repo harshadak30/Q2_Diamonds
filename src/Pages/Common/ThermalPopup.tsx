@@ -9,7 +9,6 @@ import Computingpopup1 from "../../assets/Thermal/RF.png";
 import Computingpopup2 from "../../assets/Thermal/AEROSPACE.png";
 import Computingpopup3 from "../../assets/Thermal/SATELLITE.png";
 
-
 interface MetricSection {
   number?: string;
   description: string;
@@ -48,14 +47,13 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
       title: "BATTERY",
       image: Popup2,
       metrics: [
-        { number: "ULTRA-FAST CHARGING",   description: "", },
+        { number: "ULTRA-FAST CHARGING", description: "" },
         {
           number: "<1 GHz",
           description: "NV/SiV Linewidth",
         },
         {
-          description:
-            "Less Than 2°C Deviation Across The Rack",
+          description: "Less Than 2°C Deviation Across The Rack",
           isSpecial: true,
         },
       ],
@@ -69,8 +67,14 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
         //   image: PopUp4,
         //   description: "Frequency Capability: Ka-band and beyond",
         // },
-                { number: "100X", description: "Heat Dissipation Rate Than TIMs/Ceramics" },
-        { number: "25-40°C LOWER", description: "Temperature Rise At Same Power Input" },
+        {
+          number: "100X",
+          description: "Heat Dissipation Rate Than TIMs/Ceramics",
+        },
+        {
+          number: "25-40°C LOWER",
+          description: "Temperature Rise At Same Power Input",
+        },
       ],
     },
   ];
@@ -82,7 +86,7 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
       onClick={onClose}
     >
       <div
-        className="bg-white w-full md:max-w-3xl md:w-full mx-auto rounded-b-xl md:rounded-b-xl shadow-lg shadow-gray-500/50 max-h-[85vh] overflow-y-auto"
+        className="bg-white w-full md:max-w-3xl md:w-full mx-auto shadow-lg shadow-gray-500/50 max-h-[85vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="grid grid-cols-1 md:grid-cols-3 text-center">
@@ -99,10 +103,10 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
               <div className="relative w-full flex justify-center items-center">
                 <img
                   src={column.image}
-                  className="w-full h-90 object-fill font-[Galderglynnbd]"
+                  className="w-full h-95 object-fill font-[AkuKamu]"
                   alt={column.title}
                 />
-                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black tracking-wide font-[Galderglynnbd] text-3xl px-2 py-10 ">
+                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black tracking-wide font-[AkuKamu] text-3xl px-2 py-10 ">
                   {column.title}
                 </p>
               </div>
@@ -111,16 +115,16 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
               {column.metrics.map((metric, metricIndex) => (
                 <div
                   key={metricIndex}
-                  className=" flex-1 flex flex-col justify-center p-4 mb-3"
+                  className=" flex-1 flex flex-col justify-center p-4 mb-5"
                 >
                   {/* Metric Number (Title) */}
-                  {metric.number && (
+                  {/* {metric.number && (
                     <div
-                      className={`font-[Galderglynnbd] tracking-wide leading-tight 
+                      className={`font-[AkuKamu] tracking-wide leading-tight 
                         ${
-                          column.title === "DEFENCE"
+                          column.title === "SEMICONDUCTORS"
                             ? " text-4xl text-[#cdae64]"
-                            : column.title === "5G/6G"
+                            : column.title === "BATTERY"
                             ? "text-[#cdae64] text-4xl "
                             : "text-[#cdae64] text-4xl"
                         }`}
@@ -132,15 +136,45 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
                             ? "normal"
                             : "normal",
                         textShadow:
-                          column.title === "RADAR"
+                          column.title === "LED’S"
                             ? "1px 1px 2px rgba(0,0,0,0.0)"
                             : "none",
                       }}
                     >
                       {metric.number}
                     </div>
-                  )}
+                  )} */}
 
+                  {metric.number && (
+                    <div
+                      className={`font-[AkuKamu] tracking-wide leading-tight 
+      ${
+        column.title === "SEMICONDUCTORS"
+          ? " text-4xl text-[#cdae64]"
+          : column.title === "BATTERY"
+          ? "text-[#cdae64] text-4xl "
+          : "text-[#cdae64] text-4xl"
+      }`}
+                      style={{
+                        fontWeight:
+                          metricIndex === 0
+                            ? "normal"
+                            : metricIndex === 1
+                            ? "normal"
+                            : "normal",
+                        textShadow:
+                          column.title === "LED'S"
+                            ? "1px 1px 2px rgba(0,0,0,0.0)"
+                            : "none",
+                      }}
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          metric.number === "<1 GHz"
+                            ? "<1 GH<sub>z</sub>"
+                            : metric.number,
+                      }}
+                    />
+                  )}
                   {/* Optional Metric Image */}
                   {metric.image && (
                     <img
@@ -149,22 +183,23 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
                       alt=""
                     />
                   )}
+
                   <p
                     className={`text-sm font-[Montserratmd] px-2 text-semibold${
                       metric.isSpecial
                         ? " text-black-900"
-                        : column.title === "DEFENCE"
+                        : column.title === "SEMICONDUCTORS"
                         ? "text-black-900"
-                        : column.title === "5G/6G"
+                        : column.title === "BATTERY"
                         ? "text-black-900"
                         : "text-black-900 px-5"
                     }`}
                     style={{
-                      lineHeight: "1.6",
-                      fontSize: "0.80rem",
-                      margin: metric.description.includes(
-                        "Best Balance of Mobility, Power & Heat Management"
-                      )
+                      lineHeight: "1.2",
+                      fontSize: metric.description.includes("Less Than 2°C")
+                        ? "0.95rem" // Increased from 0.80rem to 1rem
+                        : "0.80rem",
+                      margin: metric.description.includes("Less Than 2°C")
                         ? "10px 40px"
                         : "0",
                     }}
@@ -173,13 +208,10 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
                       dangerouslySetInnerHTML={{
                         __html: metric.description
                           .replace(
-                            "Mobility, Power & Heat Management",
-                            `<span style="color:#cdae64;  text-justify: inter-word;">Mobility, Power & Heat Management</span>`
+                            "Less Than 2°C",
+                            `<span style="color:#cdae64; text-justify: inter-word; font-weight:bold; ">Less Than 2°C</span>`
                           )
-                          .replace(
-                            "Frequency Capability",
-                            `<strong style=" padding:0 10px;">Frequency Capability</strong>`
-                          ),
+                          .replace("<1 GHz", `<1 GHz<sub>z</sub>`),
                       }}
                     />
                   </p>
@@ -227,7 +259,7 @@ export const PHOTONICS: React.FC<PopupProps> = ({ onClose }) => {
         //   description: "Improved Reliability and Durability",
         //   isSpecial: true,
         // },
-         {
+        {
           number: ">90% @ 8-12 µM",
           description: "improved Reliability",
         },
@@ -238,8 +270,7 @@ export const PHOTONICS: React.FC<PopupProps> = ({ onClose }) => {
       image: EVpopup3,
       metrics: [
         {
-          description:
-            "HIGH STABILITY",
+          description: "HIGH STABILITY",
           isSpecial: true,
         },
         {
@@ -360,7 +391,6 @@ export const PHOTONICS: React.FC<PopupProps> = ({ onClose }) => {
   );
 };
 
-
 export const AEROSPACE: React.FC<PopupProps> = ({ onClose }) => {
   const modalData: ModalColumn[] = [
     {
@@ -396,11 +426,14 @@ export const AEROSPACE: React.FC<PopupProps> = ({ onClose }) => {
       metrics: [
         { number: "5X", description: "No degradation" },
         // { number: "20-30%", description: "more AI Training Thoroughput" },
-         {
+        {
           description: "HIGHLY INERT",
           isSpecial: true,
         },
-        { number: "-250°C TO +500°C", description: "operational Thermal Range" },
+        {
+          number: "-250°C TO +500°C",
+          description: "operational Thermal Range",
+        },
       ],
     },
   ];
