@@ -6,21 +6,16 @@
   padding: 1rem;               /* avoid content touching edges */
 }
 
-/* Inner modal box */
 #rfModal > div {
-  /* max-height: 90vh;            prevent it from overflowing screen */
   overflow-y: auto;            /* scrollable inner area */
-  /* border-radius: 12px;         optional nice rounding */
 }
 
-/* Grid responsive handling */
 @media (max-width: 768px) {
   #rfModal .grid {
     grid-template-columns: 1fr; /* already there from Tailwind */
     row-gap: 2rem;              /* spacing between stacked columns */
   }
 
-  /* Optional: shrink images for smaller viewports */
   #rfModal img {
     max-width: 80%;
     height: auto;
