@@ -90,13 +90,13 @@ const Division: React.FC = () => {
       </main>
 
       {/* Scroll to Top */}
-      <button
+      {/* <button
         className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-[#CDAE64] text-white flex items-center justify-center shadow-lg hover:bg-[#b69957] transition"
         aria-label="scroll to top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         ↑
-      </button>
+      </button> */}
     </div>
   );
 };
