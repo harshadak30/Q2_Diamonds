@@ -102,7 +102,7 @@ export const RFModal: React.FC<PopupProps> = ({ onClose }) => {
                   className="w-full h-90 object-fill font-[Galderglynnbd]"
                   alt={column.title}
                 />
-                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black tracking-wide font-[Galderglynnbd] text-3xl px-2 py-10 ">
+                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black tracking-wide font-[AkuKamu] text-4xl px-2 py-10 ">
                   {column.title}
                 </p>
               </div>
@@ -116,7 +116,7 @@ export const RFModal: React.FC<PopupProps> = ({ onClose }) => {
                   {/* Metric Number (Title) */}
                   {metric.number && (
                     <div
-                      className={`font-[Galderglynnbd] tracking-wide leading-tight 
+                      className={`font-[AkuKamu] tracking-widest leading-tight 
                         ${
                           column.title === "DEFENCE"
                             ? " text-4xl text-[#cdae64]"
@@ -174,7 +174,7 @@ export const RFModal: React.FC<PopupProps> = ({ onClose }) => {
                         __html: metric.description
                           .replace(
                             "Mobility, Power & Heat Management",
-                            `<span style="color:#cdae64;  text-justify: inter-word;">Mobility, Power & Heat Management</span>`
+                            `<span style="color:#cdae64;  text-justify: inter-word; ">Mobility, Power & Heat Management</span>`
                           )
                           .replace(
                             "Frequency Capability",
@@ -268,7 +268,7 @@ export const EVModal: React.FC<PopupProps> = ({ onClose }) => {
             >
               <div className="relative w-full flex justify-center items-center">
                 <img src={column.image} className="w-full" alt={column.title} />
-                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black tracking-wide font-[Galderglynnbd] text-3xl px-2 py-8  rounded-lg">
+                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black tracking-wide font-[AkuKamu] text-4xl px-2 py-8  rounded-lg">
                   {column.title}
                 </p>
               </div>
@@ -279,7 +279,7 @@ export const EVModal: React.FC<PopupProps> = ({ onClose }) => {
                   className=" flex-1 flex flex-col justify-center p-4 mb-3"
                 >
                   {metric.number && (
-                    <div className=" text-4xl text-[#cdae64] tracking-widest leading-wide font-[Galderglynnbd]">
+                    <div className=" text-4xl text-[#cdae64] tracking-widest leading-wide font-[AkuKamu]">
                       {metric.number}
                     </div>
                   )}
@@ -290,62 +290,62 @@ export const EVModal: React.FC<PopupProps> = ({ onClose }) => {
                       alt=""
                     />
                   )}
-              
-                  <p 
-  className="text-sm px-2 font-[Montserratrg] text-black leading-relaxed"
-  style={{
-    margin: metric.description.includes("Faster Motor Control") || 
-            metric.description.includes("Improved Reliability") 
-      ? "10px 12px" 
-      : "0"
-  }}
->
-  {metric.hasLineBreaks ? (
-  
-     <span
-      dangerouslySetInnerHTML={{
-        __html: metric.description.replace(
-          "800V+",
-          `<span class="text-4xl text-[#cdae64] tracking-widest font-[Galderglynnbd]">800V+</span>`
-        ),
-      }}
-    />
-  ) : metric.description.includes("Faster Motor Control") ? (
-    <span
-      dangerouslySetInnerHTML={{
-        __html: metric.description
-          .replace(
-            "Faster Motor Control",
-            `<strong style="color:#cdae64;">Faster Motor Control</strong>`
-          )
-          .replace(
-            "NVH",
-            `<strong style="color:#cdae64;">NVH</strong>`
-          ),
-      }}
-    />
-  ) : metric.description.includes("Reliability") ? (
-    <span
-      dangerouslySetInnerHTML={{
-        __html: metric.description
-          .replace(
-            "Reliability",
-            `<strong style="color:#cdae64;">Reliability</strong>`
-          )
-          .replace(
-            "and",
-            `<strong style="color:#cdae64;">and</strong>`
-          )
-          .replace(
-            "Durability",
-            `<strong style="color:#cdae64;">Durability</strong>`
-          ),
-      }}
-    />
-  ) : (
-    metric.description
-  )}
-</p>
+
+                  <p
+                    className="text-sm px-2 font-[Montserratrg] text-black leading-relaxed"
+                    style={{
+                      margin:
+                        metric.description.includes("Faster Motor Control") ||
+                        metric.description.includes("Improved Reliability")
+                          ? "10px 12px"
+                          : "0",
+                    }}
+                  >
+                    {metric.hasLineBreaks ? (
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: metric.description.replace(
+                            "800V+",
+                            `<span class="text-4xl text-[#cdae64] tracking-widest font-[AkuKamu]">800V+</span>`
+                          ),
+                        }}
+                      />
+                    ) : metric.description.includes("Faster Motor Control") ? (
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: metric.description
+                            .replace(
+                              "Faster Motor Control",
+                              `<strong style="color:#cdae64;">Faster Motor Control</strong>`
+                            )
+                            .replace(
+                              "NVH",
+                              `<strong style="color:#cdae64;">NVH</strong>`
+                            ),
+                        }}
+                      />
+                    ) : metric.description.includes("Reliability") ? (
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: metric.description
+                            .replace(
+                              "Reliability",
+                              `<strong style="color:#cdae64;">Reliability</strong>`
+                            )
+                            .replace(
+                              "and",
+                              `<strong style="color:#cdae64;">and</strong>`
+                            )
+                            .replace(
+                              "Durability",
+                              `<strong style="color:#cdae64;">Durability</strong>`
+                            ),
+                        }}
+                      />
+                    ) : (
+                      metric.description
+                    )}
+                  </p>
                 </div>
               ))}
             </div>
@@ -356,7 +356,6 @@ export const EVModal: React.FC<PopupProps> = ({ onClose }) => {
   );
 };
 
-// Computing Popup - Same layout but different styling
 export const ComputingModal: React.FC<PopupProps> = ({ onClose }) => {
   const modalData: ModalColumn[] = [
     {
@@ -399,11 +398,11 @@ export const ComputingModal: React.FC<PopupProps> = ({ onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black-100 backdrop-blur-lg flex items-center justify-center z-50 p-0 md:p-0"
+      className="fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center z-50 p-4 md:p-0"
       onClick={onClose}
     >
       <div
-        className="bg-white w-full h-full md:max-w-3xl md:w-full md:mx-10 md:h-auto rounded-none md:rounded-xl shadow-lg shadow-black-500/20 overflow-y-auto"
+        className="bg-white w-full md:max-w-3xl md:w-full mx-auto rounded-b-xl md:rounded-b-xl shadow-lg shadow-gray-500/50 max-h-[85vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="grid grid-cols-1 md:grid-cols-3 text-center">
@@ -419,10 +418,10 @@ export const ComputingModal: React.FC<PopupProps> = ({ onClose }) => {
               <div className="relative w-full flex justify-center items-center">
                 <img
                   src={column.image}
-                  className="w-full md:w-1/2 sm:w-1/3 opacity-90"
+                  className="w-full h-90 object-fill font-[Galderglynnbd]"
                   alt={column.title}
                 />
-                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black font-bold text-3xl px-2 py-8  rounded-lg ">
+                <p className="absolute top-2 left-1/2 -translate-x-1/2 text-black tracking-wide font-[AkuKamu] text-3xl px-2 py-10">
                   {column.title}
                 </p>
               </div>
@@ -433,7 +432,7 @@ export const ComputingModal: React.FC<PopupProps> = ({ onClose }) => {
                   className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
                 >
                   {metric.number && (
-                    <div className="font-medium text-4xl text-[#cdae64] -tracking-wide leading-wide font-[Galderglynnrg]">
+                    <div className="font-medium text-4xl text-[#cdae64] tracking-wider leading-tight font-[AkuKamu]">
                       {metric.number}
                     </div>
                   )}
@@ -444,8 +443,29 @@ export const ComputingModal: React.FC<PopupProps> = ({ onClose }) => {
                       alt=""
                     />
                   )}
-                  <p className="text-sm  font-[Montserratmd] text-black leading-relaxed">
-                    {metric.description}
+
+                  <p
+                    className="text-sm font-[Montserratrgg] text-black leading-relaxed"
+                    style={{
+                      padding:
+                        metric.description.includes("Stable Performance") ||
+                        metric.description.includes("Thermal Conductivity")
+                          ? "0px 10px"
+                          : "0",
+                    }}
+                  >
+                    {metric.description.includes("Stable Performance") ? (
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: metric.description.replace(
+                            "Stable Performance",
+                            `<span class="text-[#cdae64]">Stable Performance</span>`
+                          ),
+                        }}
+                      />
+                    ) : (
+                      metric.description
+                    )}
                   </p>
                 </div>
               ))}

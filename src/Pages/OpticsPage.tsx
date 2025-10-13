@@ -351,33 +351,35 @@
 
 import React, { useState } from "react";
 import Rquestbutton from "./Common/Rquestbutton";
-import PopUp from "./Common/PopUp";
+// import PopUp from "./Common/PopUp";
 import { usePopup } from "./Common/usePopup";
-import ApplicationsPopup from "./Common/a";
+// import ApplicationsPopup from "./Common/RFModal";
 import OpticsHero from "../assets/Optics.jpg";
 import LaserSystems from "../assets/LaserSystems.png";
 import QuantumOptics from "../assets/QuantumOptics.png";
 import SpaceOptics from "../assets/SpaceOptics.png";
-import laser from "../assets/popupoptics.png";
-import laser2 from "../assets/popupoptics1.png";
-import laser3 from "../assets/popupoptics2.png";
-import QuantumPage from "../assets/popupoptics_2_1.png";
-import QuantumPage1 from "../assets/popupoptics_2_2.png";
-import QuantumPage2 from "../assets/popupoptics_2_3.png";
-import space from "../assets/popupoptics_3_1.png";
-import space1 from "../assets/popupoptics_3_2.png";
-import space2 from "../assets/popupoptics_3_3.png";
+// import laser from "../assets/popupoptics.png";
+// import laser2 from "../assets/popupoptics1.png";
+// import laser3 from "../assets/popupoptics2.png";
+// import QuantumPage from "../assets/popupoptics_2_1.png";
+// import QuantumPage1 from "../assets/popupoptics_2_2.png";
+// import QuantumPage2 from "../assets/popupoptics_2_3.png";
+// import space from "../assets/popupoptics_3_1.png";
+// import space1 from "../assets/popupoptics_3_2.png";
+// import space2 from "../assets/popupoptics_3_3.png";
 import graph from "../assets/GanDiamonds/optic_graph.png";
+import LASERSYSTEMS, { QUANTUMOPTICS, SPACE } from "./Common/OpticsPopup";
 
 const Optics: React.FC = () => {
   const { openPopup, closePopup, isPopupOpen } = usePopup();
   const [isPopupOpens, setIsPopupOpens] = useState(false);
+  const [activePopup, setActivePopup] = useState<'LASERSYSTEMS' | 'QUANTUMOPTICS' | 'SPACE' | null>(null);
 
-  const popupData = {
-    laser: [laser2, laser, laser3],
-    quantum: [QuantumPage, QuantumPage1, QuantumPage2],
-    space: [space, space1, space2],
-  };
+  // const popupData = {
+  //   laser: [laser2, laser, laser3],
+  //   quantum: [QuantumPage, QuantumPage1, QuantumPage2],
+  //   space: [space, space1, space2],
+  // };
 
   return (
     <div className="min-h-screen bg-white">
@@ -484,7 +486,7 @@ const Optics: React.FC = () => {
           <div className="grid grid-cols-1 lg:col-span-6 md:grid-cols-3">
             {/* Laser Systems Systems */}
             <div
-              onClick={() => setIsPopupOpens(true)}
+              onClick={() => setActivePopup('LASERSYSTEMS')}
               className="relative overflow-hidden group cursor-pointer border-b-2 md:border-b-0 md:border-l-2 md:border-r-2  border-[#C8AB6E]"
             >
               <div className="p-1">
@@ -503,7 +505,7 @@ const Optics: React.FC = () => {
 
             {/*  QUANTUM OPTICS */}
             <div
-              onClick={() => openPopup("quantum")}
+            onClick={() => setActivePopup('QUANTUMOPTICS')}
               className="relative overflow-hidden group cursor-pointer border-b-2 md:border-b-0 md:border-r-2 border-[#C8AB6E]"
             >
               <div className="p-1">
@@ -522,7 +524,7 @@ const Optics: React.FC = () => {
 
             {/* SpaceOptics */}
             <div
-              onClick={() => openPopup("space")}
+              onClick={() => setActivePopup('SPACE')}
               className="relative overflow-hidden group cursor-pointer md:border-b-0  border-[#C8AB6E]"
             >
               <div className="p-1">
@@ -542,6 +544,13 @@ const Optics: React.FC = () => {
         </div>
       </section>
       <Rquestbutton />
+
+ {activePopup === 'LASERSYSTEMS' && <LASERSYSTEMS onClose={() => setActivePopup(null)} />}
+      {activePopup === 'QUANTUMOPTICS' && <QUANTUMOPTICS onClose={() => setActivePopup(null)} />}
+      {activePopup === 'SPACE' && <SPACE onClose={() => setActivePopup(null)} />}
+ 
+
+
       {/* <ApplicationsPopup
         isOpen={isPopupOpens}
         onClose={() => setIsPopupOpens(false)}
