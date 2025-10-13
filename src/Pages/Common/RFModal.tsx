@@ -292,7 +292,7 @@ export const EVModal: React.FC<PopupProps> = ({ onClose }) => {
                   )}
 
                   <p
-                    className="text-sm px-2 font-[Montserratrg] text-black leading-relaxed"
+                    className="text-sm px-2 font-[Montserratrgg] text-black leading-relaxed"
                     style={{
                       margin:
                         metric.description.includes("Faster Motor Control") ||
