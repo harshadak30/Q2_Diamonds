@@ -11,8 +11,6 @@ const About: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-
       <section className="bg-black text-white h-[50vh] md:h-[60vh] flex items-end  pb-32 justify-center">
         <h1
           className="text-3xl  lg:pb-10 md:text-4xl lg:text-7xl  tracking-[0.3em] text-center text-[#CDAE64] justify-center font-[galderglynnlt]"
@@ -24,7 +22,6 @@ const About: React.FC = () => {
         </h1>
       </section>
 
-      {/* Introduction Section */}
       <section className="py-6 mx-4">
         <p className="text-gray-500  sm:text-lg px-10 py-6  font-[montserratmd] sm:tracking-widest text-justify">
           <span className="text-[#CDAE64] font-bold">

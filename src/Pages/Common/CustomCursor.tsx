@@ -60,21 +60,17 @@ const CustomCursor: React.FC = () => {
         const r = parseInt(match[1]);
         const g = parseInt(match[2]);
         const b = parseInt(match[3]);
-        // Lowered threshold to include text-gray-300 and lighter grays (RGB > 180)
         return r > 180 && g > 180 && b > 180;
       }
       
       return false;
     };
 
-    // Check background color and images
     const checkBackgroundAndImages = (x: number, y: number, element: HTMLElement): boolean => {
       const bgColor = window.getComputedStyle(element).backgroundColor;
       
-      // Check white background
       if (isWhiteColor(bgColor)) return true;
       
-      // Check for white class
       if (element.classList.contains('bg-white') || element.closest('.bg-white')) {
         return true;
       }
@@ -99,38 +95,31 @@ const CustomCursor: React.FC = () => {
 
     // Check if image is mostly white at cursor position
     const isImageMostlyWhite = (img: HTMLImageElement, x: number, y: number): boolean => {
-      // Create a canvas to analyze image pixels
       const canvas = document.createElement('canvas');
       const ctx = canvas.getContext('2d');
       
       if (!ctx || !img.complete || img.naturalWidth === 0) return false;
 
       try {
-        // Set canvas size to image size
         canvas.width = img.naturalWidth;
         canvas.height = img.naturalHeight;
         
         // Draw image to canvas
         ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight);
         
-        // Get image position and dimensions
         const rect = img.getBoundingClientRect();
         const scaleX = img.naturalWidth / rect.width;
         const scaleY = img.naturalHeight / rect.height;
         
-        // Calculate image coordinates
         const imgX = Math.floor((x - rect.left) * scaleX);
         const imgY = Math.floor((y - rect.top) * scaleY);
         
-        // Ensure coordinates are within image bounds
         if (imgX < 0 || imgY < 0 || imgX >= img.naturalWidth || imgY >= img.naturalHeight) {
           return false;
         }
         
-        // Get pixel data at cursor position
         const pixel = ctx.getImageData(imgX, imgY, 1, 1).data;
         
-        // Check if pixel is mostly white (RGB values close to 255)
         const isWhitePixel = pixel[0] > 200 && pixel[1] > 200 && pixel[2] > 200;
         
         return isWhitePixel;
@@ -142,19 +131,15 @@ const CustomCursor: React.FC = () => {
 
     // Smooth animation loop
     const animate = () => {
-      // Dot follows cursor instantly
       dotX = mouseX;
       dotY = mouseY;
 
-      // Ring follows with slight delay for smooth effect
       ringX += (mouseX - ringX) * 0.15;
       ringY += (mouseY - ringY) * 0.15;
 
-      // Apply transforms
       dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
       ring.style.transform = `translate(${ringX}px, ${ringY}px) scale(${isPointer ? 1.5 : 1})`;
 
-      // Control visibility based on isPointer state
       if (isPointer) {
         dot.style.opacity = '0';
         ring.style.opacity = '0';

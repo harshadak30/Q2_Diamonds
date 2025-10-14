@@ -16,6 +16,7 @@ const Thermal = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <div className="w-full h-45 bg-black"></div>
       {/* Hero Section */}
       <section className="relative flex items-center justify-center pt-16 md:pt-10 lg:pt-0">
         <img
@@ -33,8 +34,17 @@ const Thermal = () => {
       </section>
 
       {/* Description Section */}
-      <section className="px-4 py-6 sm:px-6 md:px-8 lg:px-12 xl:px-25 sm:py-8 md:py-10">
+      {/* <section className="px-4 py-6 sm:px-6 md:px-8 lg:px-12 xl:px-25 sm:py-8 md:py-10">
         <p className="font-galderglynn text-[#767676] text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-wide sm:tracking-widest text-center md:text-left ">
+          Diamond is the highest thermally conductive solid material known to
+          man, outperforming copper, aluminum nitride, and even SiC by an order
+          of magnitude. With QTG line of products, this property becomes
+          scalable for advanced industrial and electronic use.
+        </p>
+      </section> */}
+
+ <section className="px-6 py-6 sm:px-8 md:px-12 lg:px-20 xl:px-28 sm:py-8 md:py-10">
+        <p className="font-galderglynn text-[#767676] text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed tracking-wide sm:tracking-widest text-justify">
           Diamond is the highest thermally conductive solid material known to
           man, outperforming copper, aluminum nitride, and even SiC by an order
           of magnitude. With QTG line of products, this property becomes

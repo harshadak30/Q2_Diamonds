@@ -2,11 +2,9 @@
   overflow: hidden;
 }
 
-
 .modal-open-body {
   overflow: hidden;
 }
-
 
 .modal-backdrop {
   position: fixed;
@@ -18,7 +16,6 @@
   backdrop-filter: blur(4px);
   z-index: 50;
 }
-
 
 .modal-container {
   position: fixed;
@@ -33,7 +30,6 @@
   padding: 20px;
 }
 
-
 .modal-content {
   background: white;
   border-radius: 12px;
@@ -47,7 +43,7 @@
 
 @media (min-width: 768px) {
   .modal-content {
-    max-width: 672px; /* md:max-w-3xl = 672px */
+    max-width: 672px; 
   }
 }
 

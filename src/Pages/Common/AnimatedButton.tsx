@@ -49,16 +49,6 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
     gradient: 'before:bg-gradient-to-r before:from-blue-500 before:to-purple-600',
   };
 
-  // Shadow classes for each variant
-  // const shadowClasses = {
-  //   primary: 'hover:shadow-lg hover:shadow-purple-500/50',
-  //   secondary: 'hover:shadow-lg hover:shadow-gray-500/50',
-  //   golden: 'hover:shadow-lg hover:shadow-[#CDAE64]/50',
-  //   white: 'hover:shadow-lg hover:shadow-gray-300/50',
-  //   dark: 'hover:shadow-lg hover:shadow-gray-900/50',
-  //   gradient: 'hover:shadow-lg hover:shadow-purple-500/50',
-  // };
-
   return (
  <button
   type={type}

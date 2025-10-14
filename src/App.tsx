@@ -23,11 +23,10 @@ import './fonts/fonts.css';
 const App: React.FC = () => {
   return (
     <div className="font-sans antialiased">
-      <CustomCursor />  {/* Add it here */}
+      <CustomCursor /> 
       <CustomScrollBar/>
-       {/* Add the ScrollToTopButton component */}
       <ScrollToTopButton />
-      <ScrollToTop /> {/* Add this right after Router */}
+      <ScrollToTop /> 
       <Header />
       <Routes>
         <Route path="/" element={<Hero />} />
