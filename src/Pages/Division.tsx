@@ -11,7 +11,7 @@ const Division: React.FC = () => {
     <div className="flex flex-col min-h-screen overflow-hidden bg-white">
   
       <div className="relative py-40 text-center bg-black md:py-60 lg:py-72 xl:py-62">
-        <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[160%] md:translate-y-[210%] lg:translate-y-[310%] xl:translate-y-[20%]  text-[#CDAE64] font-[montserrat] font-bold text-4xl md:text-5xl tracking-[0.30em]">
+        <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[160%] md:translate-y-[210%] lg:translate-y-[310%] xl:translate-y-[20%]  text-[#CDAE64] font-[Galderglynnlt] font-bold text-4xl md:text-5xl tracking-[0.30em]">
           DIVISION
         </h2>
       </div>
