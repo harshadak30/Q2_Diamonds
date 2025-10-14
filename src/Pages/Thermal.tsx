@@ -2,33 +2,17 @@ import Rquestbutton from "./Common/Rquestbutton";
 import Powerelectronic from "../assets/power electronics.png";
 import photonics from "../assets/photonics.png";
 import AREOSPACE from "../assets/Aerospace.png";
-import Power from "../assets/POWERELECTRONICS_popup.png";
-import Power1 from "../assets/POWERELECTRONICS_popup_1.png";
-import Power2 from "../assets/POWERELECTRONICS_popup_3.png";
-import photonics1 from "../assets/Photonics_popup.png";
-import photonics2 from "../assets/Photonics_popup_1.png";
-import photonics3 from "../assets/Photonics_popup_3.png";
-import space from "../assets/Aerospace3.png";
-import space1 from "../assets/Aerospace1.png";
-import space2 from "../assets/Aerospace2.png";
-import PopUp from "./Common/PopUp";
-import { usePopup } from "./Common/usePopup";
 import optic_graph from "../assets/GanDiamonds/Thermal_graph.png";
 
 import Frame4 from "../assets/Thermalhero.jpg";
 import { useState } from "react";
 import POWERELECTRONICS, { AEROSPACE, PHOTONICS } from "./Common/ThermalPopup";
 const Thermal = () => {
-  const { openPopup, closePopup, isPopupOpen } = usePopup();
   const [activePopup, setActivePopup] = useState<
     "POWERELECTRONICS" | "PHOTONICS" | "AEROSPACE" | null
   >(null);
 
-  const popupData = {
-    Power: [Power, Power1, Power2],
-    photonics: [photonics2, photonics3, photonics1],
-    space: [space, space1, space2],
-  };
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -58,7 +42,7 @@ const Thermal = () => {
         </p>
       </section>
 
-      <section className="px-5  mb-4 2xl:px-23 ">
+      <section className="px-5  2xl:px-23 ">
         <h2 className="text-black font-[Galderglynnlt] text-3xl sm:text-5xl md:text-5xl xl:text-5xl tracking-wider text-center md:text-left mb-6 md:mb-8 ml-1 md:ml-2">
           PROPERTIES
         </h2>
@@ -204,23 +188,7 @@ const Thermal = () => {
       {activePopup === "AEROSPACE" && (
         <AEROSPACE onClose={() => setActivePopup(null)} />
       )}
-      <PopUp
-        isOpen={isPopupOpen("Power")}
-        onClose={closePopup}
-        images={popupData.Power}
-      />
-
-      <PopUp
-        isOpen={isPopupOpen("photonics")}
-        onClose={closePopup}
-        images={popupData.photonics}
-      />
-
-      <PopUp
-        isOpen={isPopupOpen("space")}
-        onClose={closePopup}
-        images={popupData.space}
-      />
+  
     </div>
   );
 };
