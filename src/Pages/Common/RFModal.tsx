@@ -225,7 +225,7 @@ export const RFModal: React.FC<PopupProps> = ({ onClose }) => {
                         )
                         .replace(
                           "Frequency Capability",
-                          `<strong style=" padding:0 10px;">Frequency Capability</strong>`
+                          `<strong style=" padding:-2px 10px;">Frequency Capability</strong>`
                         ),
                     }}
                   />
@@ -444,7 +444,7 @@ export const ComputingModal: React.FC<PopupProps> = ({ onClose }) => {
             key={column.title}
             className={`${
               index < 2
-                ? "border-b-2 md:border-b-0 md:border-r-2 border-[#c09141]"
+                ? "border-b-2 md:border-b-0 md:border-r-2 border-[#c09141] mb-6"
                 : ""
             } flex flex-col items-center min-h-[500px]`}
           >

@@ -97,7 +97,7 @@ const Thermal = () => {
               {/* Right Card - Image */}
               <div className="flex flex-col w-full lg:w-1/2">
                 {/* Border Box - Matches left card */}
-                <div className=" overflow-hidden flex items-center justify-center h-[330px] lg:h-[350px] xl:h-[500px]">
+                <div className=" overflow-hidden flex items-center justify-center h-[400px] md:h-[410px] lg:h-[390px] xl:h-[500px]">
                   <img
                     src={optic_graph}
                     alt="Comparison chart"

@@ -44,7 +44,7 @@ const Quantum: React.FC = () => {
 
           <div className="flex flex-col gap-8 lg:flex-row lg:gap-6">
             <div className="w-full lg:w-1/2">
-              <div className="border border-[#c5a867] bg-white p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col items-center justify-center min-h-[400px]">
+              <div className="border border-[#c5a867] bg-white p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col items-center justify-center min-h-[230px]">
                 <div className="mb-4 text-center sm:mb-6">
                   <h1 className="text-[70px] sm:text-[140px] md:text-[160px] lg:text-[180px] xl:text-[200px] font-galderglynn text-[#c5a867] leading-none tracking-wider">
                     100X
@@ -130,23 +130,23 @@ const Quantum: React.FC = () => {
                 {/* First Row */}
                 <div className="grid grid-cols-2 border-b border-[#c5a867]">
                   {/* Excellent Integration */}
-                  <div className=" sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
-                    <h3 className="text-xl sm:text-[20px] md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight mb-2 lg:mr-4">
+                  <div className="p-2 sm:p-6 md:p-4 lg:p-6 xl:p-10 flex flex-col justify-center min-h-[180px] bg-white">
+                    <h3 className="text-xl sm:text-[20px] md:text-[28px] lg:text-[25px] xl:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight mb-2 lg:mr-4">
                       Excellent
                       <br />
                       Integration
                     </h3>
-                    <p className="text-[12px] sm:text-lg md:text-2xl font-normal font-[Montserratmd] text-black">
+                    <p className="text-[12px] sm:text-lg md:text-lg font-normal font-[Montserratmd] text-black">
                       with Photonics System
                     </p>
                   </div>
 
                   {/* Room Temperature */}
-                  <div className="p-4 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
-                    <p className="text-[12px] sm:text-lg font-normal md:text-2xl font-[Montserratmd] text-black mb-2">
+                  <div className="pl-2 sm:p-6 md:p-4 lg:p-6 xl:p-10  flex flex-col justify-center min-h-[180px] bg-white">
+                    <p className="text-[12px] sm:text-lg font-normal md:text-lg font-[Montserratmd] text-black mb-2">
                       Operates At
                     </p>
-                    <h3 className="text-xl sm:text-[20px]  md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight">
+                    <h3 className="text-xl sm:text-[20px]  md:text-[28px] lg:text-[25px] xl:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight">
                       Room
                       <br />
                       Temperature
@@ -157,11 +157,11 @@ const Quantum: React.FC = () => {
                 {/* Second Row */}
                 <div className="grid grid-cols-2">
                   {/* 2ms Spin Coherence */}
-                  <div className=" sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
-                    <h3 className="text-xl sm:text-[20px]  md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] mb-2">
+                  <div className="p-2 sm:p-6 md:p-4 lg:p-6 xl:p-10  flex flex-col justify-center min-h-[180px] bg-white">
+                    <h3 className="text-xl sm:text-[20px]  md:text-[28px] lg:text-[25px] xl:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] mb-2">
                       2ms
                     </h3>
-                    <p className="text-[12px] sm:text-md font-normal md:text-2xl font-[Montserratmd] text-black">
+                    <p className="text-[12px] sm:text-md font-normal md:text-lg font-[Montserratmd] text-black">
                       Spin Coherence
                       <br />
                       Time (T<sub>2</sub>)
@@ -169,11 +169,11 @@ const Quantum: React.FC = () => {
                   </div>
 
                   {/* Quantum Efficiency */}
-                  <div className="p-4 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
-                    <p className="text-[12px] sm:text-lg font-normal md:text-2xl font-[Montserratmd] text-black mb-2">
+                  <div className="pl-2 sm:p-6 md:p-4 lg:p-6 xl:p-10  flex flex-col justify-center min-h-[180px] bg-white">
+                    <p className="text-[12px] sm:text-lg font-normal md:text-lg font-[Montserratmd] text-black mb-2">
                       Unmatched
                     </p>
-                    <h3 className="text-xl sm:text-[20px]  md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight">
+                    <h3 className="text-xl sm:text-[20px] md:text-[28px] lg:text-[25px] xl:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight">
                       Quantum
                       <br />
                       Efficiency
@@ -190,7 +190,7 @@ const Quantum: React.FC = () => {
       <section className=" border-[#C8AB6E]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border-b-2 border-t-1 border-[#C8AB6E]">
           {/* Left Side - Title */}
-          <div className="lg:col-span-6 bg-white flex items-center justify-center p-6 sm:p-8 md:p-6 lg:p-12 border-b-2 lg:border-b-0 border-[#C8AB6E]">
+          <div className="lg:col-span-6 bg-white flex items-center justify-center p-6 sm:p-8 md:p-8 lg:p-12 border-b-2 lg:border-b-0 border-[#C8AB6E]">
             <h2 className="text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-[Galderglynnlt] leading-snug tracking-wider text-center font-normal">
               APPLICATIONS IN THE QUANTUM FIELD
             </h2>

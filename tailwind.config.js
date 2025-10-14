@@ -13,6 +13,8 @@ export default {
         galderglynnrg: ['Galderglynnrg', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
         raleway: ['Raleway', 'sans-serif'],
+         raleway: ["RalewaySemiBold", "sans-serif"],
+        raleway: ["RalewayBold", "sans-serif"],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

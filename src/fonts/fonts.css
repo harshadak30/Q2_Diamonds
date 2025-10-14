@@ -47,10 +47,23 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'AkuKamu';
   src: url('./Aku&Kamu.otf') format('truetype');
   font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewaySemiBold';
+  src: url('./Raleway-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RalewayBold';
+  src: url('./Raleway-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
 }

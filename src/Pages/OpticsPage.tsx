@@ -16,7 +16,7 @@ const Optics: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <div className="w-full h-45 bg-black"></div>
-      <section className="relative flex items-center justify-center pt-16 md:pt-10 lg:pt-0">
+      <section className="relative flex items-center justify-center ">
         <div className="relative w-full">
           <img
             src={OpticsHero}
@@ -120,7 +120,7 @@ const Optics: React.FC = () => {
                 <h3 className="text-black text-sm  font-semibold tracking-wide text-center mb-3 sm:mb-4 font-[Galderglynnlt]">
                   Laser Systems
                 </h3>
-                <div className="w-full overflow-hidden md:h-40 lg:h-40 xl:h-68">
+                <div className="w-full overflow-hidden md:h-48 lg:h-40 xl:h-68">
                   <img
                     src={LaserSystems}
                     alt="Laser Systems"
@@ -139,7 +139,7 @@ const Optics: React.FC = () => {
                 <h3 className="text-black  sm:text-sm  font-semibold tracking-wide text-center mb-3 sm:mb-4 font-[Galderglynnlt]">
                   QUANTUM OPTICS
                 </h3>
-                <div className="w-full overflow-hidden md:h-40 lg:h-40 xl:h-68">
+                <div className="w-full overflow-hidden md:h-48 lg:h-40 xl:h-68">
                   <img
                     src={QuantumOptics}
                     alt=" QUANTUM OPTICS"
@@ -158,7 +158,7 @@ const Optics: React.FC = () => {
                 <h3 className="text-black text-sm  font-semibold tracking-wide text-center mb-3 sm:mb-4 font-[Galderglynnlt]">
                   Space
                 </h3>
-                <div className="w-full overflow-hidden md:h-40 lg:h-40 xl:h-68">
+                <div className="w-full overflow-hidden md:h-48 lg:h-40 xl:h-68">
                   <img
                     src={SpaceOptics}
                     alt="SpaceOptics"

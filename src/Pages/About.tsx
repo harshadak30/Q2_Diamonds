@@ -13,7 +13,7 @@ const About: React.FC = () => {
     <div className="min-h-screen bg-white">
       <section className="bg-black text-white h-[50vh] md:h-[60vh] flex items-end  pb-32 justify-center">
         <h1
-          className="text-3xl  lg:pb-10 md:text-4xl lg:text-7xl  tracking-[0.3em] text-center text-[#CDAE64] justify-center font-[galderglynnlt]"
+          className="text-3xl  lg:pb-10 md:text-4xl lg:text-7xl  tracking-[0.6em] text-center text-[#CDAE64] justify-center font-[galderglynnlt]"
           style={{
     letterSpacing: window.innerWidth < 768 ? "0.20em" : "0.40em",
   }}
@@ -37,7 +37,7 @@ const About: React.FC = () => {
 
       {/* Laboratory Image Section */}
       <section className="mx-auto">
-        <div className="w-full h-[130px] sm:h-[350px] bg-gray-300 overflow-hidden">
+        <div className="w-full h-[130px] sm:h-[350px] lg:h-full bg-gray-300 overflow-hidden">
           <img
             src={bg1}
             alt="Q2 Diamonds Laboratory"
@@ -62,7 +62,7 @@ const About: React.FC = () => {
 
       {/* House of Maitri Section */}
 
-      <section className="mx-auto hidden sm:block lg:px-18 md:px-1 border-2 border-[#CDAE64] w-[100%]">
+      <section className="mx-auto hidden sm:block lg:px-16 md:px-1 border-t-2 border-b-2 border-[#CDAE64] w-[100%]">
         <div className="grid sm:grid-cols-2 w-[100%]">
           {/* Left side */}
           <div className="border-r-2 w-[93%] border-[#CDAE64] px-6 py-6 flex items-center">
@@ -71,15 +71,15 @@ const About: React.FC = () => {
               <br />
               INNOVATION UNDER
               <br />
-              <span className="text-[#CDAE64] font-[galderglynnrg] block">
+              THE  <span className="text-[#CDAE64] font-[galderglynnrg] ">
                 HOUSE OF MAITRI
               </span>
             </h2>
           </div>
 
           {/* Right side */}
-          <div className="flex items-center py-10 ">
-            <p className="text-gray-500 md:pr-2  sm:text-lg text-justify leading-relaxed font-[montserratmd]">
+          <div className="flex items-center py-8 ">
+            <p className="text-gray-500 md:pr-2  sm:text-lg text-justify leading-relaxed tracking-wide font-[montserratmd]">
               Q² Diamonds is more than an independent entity as it thrives under
               the umbrella of the House of Maitri. As a vital component of this
               vibrant conglomerate, we collaborate closely with other
@@ -87,7 +87,7 @@ const About: React.FC = () => {
               beyond the House of Maitri sphere. Our extensive
               {!isHouseExpanded && <span>...</span>}
               {isHouseExpanded && (
-                <span className="text-gray-500 lg:text-xl leading-relaxed mt-4 font-[montserratmd]">
+                <span className="text-gray-500 lg:text-xl leading-relaxed tracking-wide  mt-4 font-[montserratmd]">
                   {" "}
                   team and collaborators consist of distinguished academicians,
                   industry leaders, scientific frontiers and innovators who work
@@ -105,7 +105,7 @@ const About: React.FC = () => {
               )}
               <button
                 onClick={() => setIsHouseExpanded(!isHouseExpanded)}
-                className="text-[#CDAE64] font-medium cursor-pointer hover:underline focus:outline-none ml-1"
+                className="text-[#CDAE64] font-semibold cursor-pointer hover:underline focus:outline-none ml-1"
               >
                 {isHouseExpanded ? "Read Less" : "Read More"}
               </button>
@@ -136,7 +136,7 @@ const About: React.FC = () => {
 
       {/* Sustainability Section */}
 
-      <section className="mx-auto hidden sm:block lg:px-18 md:px-1 border-2 border-[#CDAE64] w-[100%]">
+      <section className="mx-auto hidden sm:block lg:px-16 md:px-1 border-t-2 border-b-2 border-[#CDAE64] w-[100%]">
         <div className="grid sm:grid-cols-2 w-[100%] ">
           {/* Left side */}
           <div className=" border-r-2 w-[93%] border-[#CDAE64] px-6 py-6 flex items-center">
@@ -155,7 +155,7 @@ const About: React.FC = () => {
           </div>
 
           {/* Right side */}
-          <div className="flex items-center py-10 ">
+          <div className="flex items-center py-8 ">
             <p className="text-gray-500  sm:text-lg text-justify leading-relaxed md:pr-2 font-[montserratmd]">
               At Q2 , the heart of our mission lies an unbreakable dedication to
               ESG principles. To us, sustainability transcends mere trendiness
@@ -181,7 +181,7 @@ const About: React.FC = () => {
                 onClick={() =>
                   setIsSustainabilityExpanded(!isSustainabilityExpanded)
                 }
-                className=" text-[#CDAE64] font-medium cursor-pointer hover:underline focus:outline-none"
+                className=" text-[#CDAE64] font-semibold cursor-pointer hover:underline focus:outline-none"
               >
                 {isSustainabilityExpanded ? "Read Less" : "Read More"}
               </button>

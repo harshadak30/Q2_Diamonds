@@ -15,7 +15,7 @@ const GanOnDiamond: React.FC = () => {
     <div className="min-h-screen bg-white">
       <div className="w-full h-45 bg-black"></div>
       {/* Hero Section */}
-      <section className="relative pt-16 md:pt-10 lg:pt-0 flex items-center justify-center">
+      <section className="relative   lg:pt-0 flex items-center justify-center">
         <img
           src={GanOnDiamondImage}
           alt="GaN on Diamond Technology"
@@ -122,13 +122,13 @@ const GanOnDiamond: React.FC = () => {
                 </div>
 
                 <div className="w-full pt-3 flex items-center justify-around gap-2 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-1 px-2 sm:px-4 md:px-6 lg:px-10 xl:px-0">
-                  <p className="text-gray-600 font-[Montserratmd] text-center text-xs sm:text-sm md:text-sm lg:text-[14px] xl:text-lg leading-relaxed tracking-wider font-normal flex-1">
+                  <p className="text-gray-600 font-[Montserratmd] text-center text-xs sm:text-sm md:text-sm lg:text-[16px] xl:text-lg leading-relaxed tracking-wider font-normal flex-1">
                     Thermal Resistance
                   </p>
-                  <p className="text-gray-600 font-[Montserratmd] text-center text-xs sm:text-sm md:text-sm lg:text-[14px] xl:text-lg leading-relaxed tracking-wider font-normal flex-1">
+                  <p className="text-gray-600 font-[Montserratmd] text-center text-xs sm:text-sm md:text-sm lg:text-[16px] xl:text-lg leading-relaxed tracking-wider font-normal flex-1">
                     Power Density
                   </p>
-                  <p className="text-gray-600 font-[Montserratmd] text-center text-xs sm:text-sm md:text-sm lg:text-[14px] xl:text-lg leading-relaxed tracking-wider font-normal flex-1">
+                  <p className="text-gray-600 font-[Montserratmd] text-center text-xs sm:text-sm md:text-sm lg:text-[16px] xl:text-lg leading-relaxed tracking-wider font-normal flex-1">
                     Longetivity
                   </p>
                 </div>

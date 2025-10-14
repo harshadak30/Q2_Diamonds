@@ -69,9 +69,9 @@ const HeroSection: React.FC = () => {
       {/* Hero Section */}
 
       <section className="min-h-screen bg-black flex items-center justify-center lg:pt-30 px-4 lg:pb-10">
-        <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto mb-2">
+        <div className="flex flex-col items-center justify-center text-center max-w-7xl mx-auto mb-2">
           <h1
-            className="text-[#c0bfc5] font-bold font-raleway
+            className="text-[#c0bfc5] font-extrabold font-[RalewayBold]
                    text-4xl mt-10
                    sm:text-5xl sm:mt-24
                    md:text-6xl md:mt-32
@@ -166,13 +166,13 @@ const HeroSection: React.FC = () => {
 
       <section
         ref={videoSectionRef}
-        className="py-12 md:py-18 lg:py-20 bg-black"
+        className="py-16 md:py-18 lg:py-20 bg-black"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
           <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-16">
             {/* Video Section - Left */}
             <div className="lg:flex-[1.5] w-full">
-              <div className="relative mb-8 md:mb-12 rounded-xl md:rounded-2xl overflow-hidden aspect-video bg-gradient-to-br from-purple-900 via-black to-red-900 shadow-2xl">
+              <div className="relative  rounded-xl md:rounded-2xl overflow-hidden aspect-video bg-gradient-to-br from-purple-900 via-black to-red-900 shadow-2xl">
                 <video
                   ref={videoRef}
                   className="w-full h-full object-cover"
@@ -203,7 +203,7 @@ const HeroSection: React.FC = () => {
                     <svg
                       width="40"
                       height="40"
-                      className="md:w-16 md:h-16 lg:w-20 lg:h-20 text-white"
+                      className=" lg:w-20 lg:h-20 text-white"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -248,7 +248,7 @@ const HeroSection: React.FC = () => {
               <div className="space-y-6 md:space-y-8">
                 {/* UPCOMING EVENTS Title */}
                 <div>
-                  <h2 className="text-xl md:text-4xl lg:text-4xl font-bold text-white mb-12 md:mb-14lg:mb-18 text-left lg:text-left leading-relaxed tracking-wide">
+                  <h2 className="text-xl md:text-4xl lg:text-4xl font-bold text-white mb-12 md:mb-14 lg:mb-16 text-left lg:text-left leading-relaxed tracking-widest">
                     UPCOMING EVENTS
                   </h2>
                 </div>
