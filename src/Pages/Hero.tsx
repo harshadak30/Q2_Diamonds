@@ -67,34 +67,7 @@ const HeroSection: React.FC = () => {
   return (
     <div className="w-full overflow-x-hidden bg-black">
       {/* Hero Section */}
-      {/* <section className="min-h-screen bg-black flex items-center justify-center  lg:pt-30 px-4 lg:pb-20">
-        <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto">
-          <h1 className="text-[#c0bfc5] text-3xl md:text-5xl lg:text-9xl font-bold lg:mt-60  ">
-            QUANTUM QUEST
-          </h1>
-          <div className="relative mb-8">
-            <img
-              src={Q2logo}
-              alt="Q2 Diamonds Logo"
-              className="h-80 md:h-120 lg:h-[680px] w-auto max-w-full"
-            />
-          </div>
-        </div>
-      </section> */}
-      {/* <section className="min-h-screen bg-black flex items-center justify-center lg:pt-30 px-4 lg:pb-10">
-  <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto">
-    <h1 className="text-[#c0bfc5] text-6xl md:text-7xl lg:text-9xl font-bold lg:mt-60  md:mt-40 mt-30 font-raleway">
-      QUANTUM QUEST
-    </h1>
-    <div className="relative mb-8">
-      <img
-        src={Q2logo}
-        alt="Q2 Diamonds Logo"
-        className="h-120 md:h-140 lg:h-[680px] w-auto max-w-full"
-      />
-    </div>
-  </div>
-</section> */}
+
       <section className="min-h-screen bg-black flex items-center justify-center lg:pt-30 px-4 lg:pb-10">
         <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto mb-2">
           <h1
@@ -103,7 +76,7 @@ const HeroSection: React.FC = () => {
                    sm:text-5xl sm:mt-24
                    md:text-6xl md:mt-32
                    lg:text-8xl lg:mt-60
-                   xl:text-9xl tracking-wide" 
+                   xl:text-9xl tracking-wide"
           >
             QUANTUM QUEST
           </h1>
@@ -270,7 +243,6 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Content Section - Right */}
             {/* Content Section - Right */}
             <div className="flex-1 w-full">
               <div className="space-y-6 md:space-y-8">

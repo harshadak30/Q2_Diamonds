@@ -555,7 +555,7 @@ const BaseModal: React.FC<{ onClose: () => void; children: React.ReactNode }> = 
       onClick={onClose}
     >
       <div
-        className="bg-white w-full max-w-[85vw] md:max-w-3xl rounded-xl shadow-lg shadow-gray-500/50 my-8 md:my-16 mx-auto"
+        className="bg-white w-full max-w-[78vw] sm:max-w-[50vw] md:max-w-3xl rounded-xl shadow-lg shadow-gray-500/50 my-8 md:my-16 mx-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {children}
