@@ -15,8 +15,7 @@ const Optics: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-
+      <div className="w-full h-45 bg-black"></div>
       <section className="relative flex items-center justify-center pt-16 md:pt-10 lg:pt-0">
         <div className="relative w-full">
           <img
@@ -32,7 +31,6 @@ const Optics: React.FC = () => {
         </div>
       </section>
 
-      {/* Description Section */}
       <section className="px-4 py-6 sm:px-8 md:px-10 lg:px-12 xl:px-14 sm:py-6 md:py-8">
         <p className="text-gray-600 text-base sm:text-lg md:text-lg lg:text-xl leading-relaxed lg:tracking-[2.5px] md:tracking-[1.5px] tracking-[0.70px] font-[Montserratrg]  md:text-left text-justify">
           Diamond possesses a combination of optical, thermal, and mechanical
@@ -53,11 +51,8 @@ const Optics: React.FC = () => {
           <div className="w-full mx-auto ">
             {/* Main Container with two boxes side by side */}
             <div className="flex flex-col gap-6 lg:flex-row sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
-              {/* Left Card */}
               <div className="flex flex-col justify-between w-full gap-8 just lg:w-1/2 ">
-                {/* Border Box */}
                 <div className="border-2 border-[#c5a867] bg-white p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 2xl:p-20 flex flex-col justify-center min-h-[320px] md:min-h-[320px] lg:min-h-[480px] xl:min-h-[500px] 2xl:min-h-[720px]">
-                  {/* 10X Text */}
                   <div className="mb-4 text-center sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12">
                     <h1 className="text-[150px] lg:text-[160px] xl:text-[270px] 2xl:text-[320px] font-[Galderglynnbd] font-extrabold text-[#c5a867] leading-none tracking-tight">
                       10X

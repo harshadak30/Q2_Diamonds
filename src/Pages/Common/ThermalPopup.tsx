@@ -1,5 +1,3 @@
-
-
 import Popup1 from "../../assets/Thermal/semi_conductors.png";
 import Popup2 from "../../assets/Thermal/BATTERY.png";
 import Popup3 from "../../assets/Thermal/lED’S.png";
@@ -19,7 +17,7 @@ interface MetricSection {
   image?: string;
   isSpecial?: boolean;
   hasLineBreaks?: boolean;
-  isTemperatureLower?: boolean; 
+  isTemperatureLower?: boolean;
   isVoltage?: boolean;
 }
 
@@ -51,14 +49,12 @@ const useDisableBodyScroll = (isOpen: boolean) => {
   }, [isOpen]);
 };
 
-// Base Modal Component - NO internal scrolling, uses window scroll
 const BaseModal: React.FC<{
   onClose: () => void;
   children: React.ReactNode;
 }> = ({ onClose, children }) => {
   useDisableBodyScroll(true);
 
-  // Close on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -120,14 +116,10 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
           number: "100X",
           description: "Heat Dissipation Rate Than TIMs/Ceramics",
         },
-        // {
-        //   number: "25-40°C LOWER",
-        //   description: "Temperature Rise At Same Power Input",
-        // },
         {
           number: "25-40°C LOWER",
           description: "Temperature Rise At Same Power Input",
-          isTemperatureLower: true, // Add this property
+          isTemperatureLower: true, 
         },
       ],
     },
@@ -159,7 +151,7 @@ export const POWERELECTRONICS: React.FC<PopupProps> = ({ onClose }) => {
             {column.metrics.map((metric, metricIndex) => (
               <div
                 key={metricIndex}
-                className="flex-1 flex flex-col justify-center p-4 mb-5"
+                className="flex-1 flex flex-col justify-center p-4 mb-8"
               >
                 {metric.number && (
                   <div
@@ -283,17 +275,8 @@ export const PHOTONICS: React.FC<PopupProps> = ({ onClose }) => {
       title: "ANALYTICAL",
       image: EVpopup3,
       metrics: [
-        // {
-        //   description: "HIGH STABILITY",
-        //   isSpecial: true,
-        // },
         { number: "HIGH STABILITY", description: "" },
         { number: "LONG COHERENCE MAINTENACE", description: "" },
-
-        // {
-        //   description: "LONG COHERENCE MAINTENACE",
-        //   hasLineBreaks: true,
-        // },
         { number: ">98%", description: "RELIABILITY" },
       ],
     },
@@ -321,7 +304,7 @@ export const PHOTONICS: React.FC<PopupProps> = ({ onClose }) => {
             {column.metrics.map((metric, metricIndex) => (
               <div
                 key={metricIndex}
-                className="flex-1 flex flex-col justify-center p-4 mb-3"
+                className="flex-1 flex flex-col justify-center p-4 mb-8"
               >
                 {metric.number && (
                   <div className="text-3xl text-[#cdae64] tracking-widest leading-wide font-[AkuKamu]">
@@ -476,13 +459,9 @@ export const AEROSPACE: React.FC<PopupProps> = ({ onClose }) => {
             </div>
 
             {column.metrics.map((metric, metricIndex) => (
-              // <div
-              //   key={metricIndex}
-              //   className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
-              // >
               <div
                 key={metricIndex}
-                className="mt-2 flex-1 flex flex-col justify-center p-4 mb-3"
+                className="mt-2 flex-1 flex flex-col justify-center p-4 mb-8"
                 style={{
                   margin: metric.isSpecial ? "0 70px" : "0",
                   fontSize: metric.isSpecial ? "20px" : "0.80rem",

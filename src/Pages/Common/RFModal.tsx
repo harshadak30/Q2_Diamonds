@@ -1,5 +1,3 @@
-
-
 import Popup1 from "../../assets/GanDiamonds/RFpopup1.png";
 import Popup2 from "../../assets/GanDiamonds/RFpopup2.png";
 import Popup3 from "../../assets/GanDiamonds/RFpopup3.png";
@@ -335,11 +333,10 @@ export const EVModal: React.FC<PopupProps> = ({ onClose }) => {
                 <p
                   className="text-sm px-2 font-[Montserratrgg] text-black leading-relaxed"
                   style={{
-                  
                     margin: metric.description.includes("Faster Motor Control")
                       ? "10px 28px"
                       : metric.description.includes("Improved Reliability")
-                      ? "10px 50px" // Increased from 12px to 20px for more side margin
+                      ? "10px 50px"
                       : "0",
                   }}
                 >
@@ -405,7 +402,7 @@ export const ComputingModal: React.FC<PopupProps> = ({ onClose }) => {
       metrics: [
         { number: "5X", description: "Thermal Conductivity than Gan on SiC" },
         { number: "10-20X", description: "Lower Junction Heating" },
-      
+
         {
           description: "Stable Performance Without Throttling",
           isSpecial: true,

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import axiosInstance from '../../helper/axios';
+import { useState } from "react";
+import axiosInstance from "../../helper/axios";
 
 export interface ContactFormData {
   name: string;
@@ -35,50 +35,63 @@ const useContactUs = (): UseContactUsReturn => {
     setLoading(true);
     setError(null);
     setSuccess(false);
-    setFieldErrors({}); // Clear previous field errors
+    setFieldErrors({});
 
     try {
-      const response = await axiosInstance.post('/api/user-contact/', data, {
+      const response = await axiosInstance.post("/api/user-contact/", data, {
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        }
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
       });
-      
+
       setSuccess(true);
-      console.log('Success:', response.data);
+      console.log("Success:", response.data);
       return response.data;
     } catch (err: any) {
-      console.error('Error:', err);
-      
-      // Handle field-specific errors from backend
+      console.error("Error:", err);
+
       if (err.response?.data) {
         const backendErrors = err.response.data;
-        
-        // If backend returns field-specific errors
-        if (backendErrors.name || backendErrors.email || backendErrors.phone_number || backendErrors.message) {
+
+        if (
+          backendErrors.name ||
+          backendErrors.email ||
+          backendErrors.phone_number ||
+          backendErrors.message
+        ) {
           setFieldErrors({
             name: backendErrors.name?.[0] || backendErrors.name,
             email: backendErrors.email?.[0] || backendErrors.email,
-            phone_number: backendErrors.phone_number?.[0] || backendErrors.phone_number,
+            phone_number:
+              backendErrors.phone_number?.[0] || backendErrors.phone_number,
             message: backendErrors.message?.[0] || backendErrors.message,
           });
         }
-        
-        // General error message
-        const errorMessage = backendErrors.message || backendErrors.detail || 'Failed to submit form. Please try again.';
+
+        const errorMessage =
+          backendErrors.message ||
+          backendErrors.detail ||
+          "Failed to submit form. Please try again.";
         setError(errorMessage);
       } else {
-        setError('Network error. Please check your connection.');
+        setError("Network error. Please check your connection.");
       }
-      
+
       throw err;
     } finally {
       setLoading(false);
     }
   };
 
-  return { handleContactSubmit, loading, error, success, fieldErrors, resetSuccess: () => setSuccess(false) };
+  return {
+    handleContactSubmit,
+    loading,
+    error,
+    success,
+    fieldErrors,
+    resetSuccess: () => setSuccess(false),
+  };
 };
 
 export default useContactUs;

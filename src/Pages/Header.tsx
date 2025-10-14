@@ -17,14 +17,11 @@ const Navigation = () => {
       if (currentScrollY > 1) {
         setScrolled(true);
 
-        // Only hide navbar on first scroll
         if (!hasScrolled) {
           setHidden(true);
 
-          // Clear any existing timeout
           clearTimeout(scrollTimeout);
 
-          // Show navbar after half second
           scrollTimeout = setTimeout(() => {
             setHidden(false);
             setHasScrolled(true);
@@ -33,7 +30,6 @@ const Navigation = () => {
       } else {
         setScrolled(false);
         setHidden(false);
-        // Reset hasScrolled when back at top
         if (currentScrollY === 0) {
           setHasScrolled(false);
         }
@@ -59,8 +55,8 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
-    navigate("/"); // go to homepage route
-    window.scrollTo(0, 0); // scroll to top
+    navigate("/");
+    window.scrollTo(0, 0);
   };
 
   return (

@@ -11,6 +11,7 @@ import Communication from "../assets/COMMUNICATION.png";
 const Quantum: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <div className="w-full h-45 bg-black"></div>
       {/* Hero Section */}
       <section className="relative flex items-center justify-center pt-16 md:pt-10 lg:pt-0">
         <img
@@ -42,10 +43,8 @@ const Quantum: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-8 lg:flex-row lg:gap-6">
-            {/* Left Box - Magnetic Sensitivity with Border */}
             <div className="w-full lg:w-1/2">
               <div className="border border-[#c5a867] bg-white p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col items-center justify-center min-h-[400px]">
-                {/* 100X Text */}
                 <div className="mb-4 text-center sm:mb-6">
                   <h1 className="text-[70px] sm:text-[140px] md:text-[160px] lg:text-[180px] xl:text-[200px] font-galderglynn text-[#c5a867] leading-none tracking-wider">
                     100X
@@ -68,15 +67,11 @@ const Quantum: React.FC = () => {
             </div>
 
             {/* Right Box - 2x2 grid with full height vertical line */}
-            <div className="relative w-full lg:w-1/2">
-              {/* Grid without outer border */}
+            {/* <div className="relative w-full lg:w-1/2">
               <div className="relative h-full text-black">
-                {/* Vertical line that spans full height of grid */}
                 <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[#c5a867] transform -translate-x-1/2 z-10"></div>
 
-                {/* First Row */}
                 <div className="grid grid-cols-2 border-b border-[#c5a867]">
-                  {/* Excellent Integration */}
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
                     <h3 className="text-2xl sm:text-3xl md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight mb-2 lg:mr-4">
                       Excellent
@@ -88,7 +83,6 @@ const Quantum: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Room Temperature */}
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
                     <p className="text-base sm:text-lg font-normal md:text-2xl font-[Montserratmd] text-black mb-2">
                       Operates At
@@ -101,9 +95,7 @@ const Quantum: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Second Row */}
                 <div className="grid grid-cols-2">
-                  {/* 2ms Spin Coherence */}
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
                     <h3 className="text-2xl sm:text-3xl  md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] mb-2">
                       2ms
@@ -115,12 +107,73 @@ const Quantum: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Quantum Efficiency */}
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
                     <p className="text-base sm:text-lg font-normal md:text-2xl font-[Montserratmd] text-black mb-2">
                       Unmatched
                     </p>
                     <h3 className="text-2xl sm:text-3xl  md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight">
+                      Quantum
+                      <br />
+                      Efficiency
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+
+              <div className="relative w-full lg:w-1/2">
+              {/* Grid without outer border */}
+              <div className="relative h-full text-black">
+                {/* Vertical line that spans full height of grid */}
+                <div className="absolute left-1/2 top-[10%] bottom-[10%] lg:top-0 lg:bottom-0 w-px bg-[#c5a867] transform -translate-x-1/2 z-10"></div>
+
+                {/* First Row */}
+                <div className="grid grid-cols-2 border-b border-[#c5a867]">
+                  {/* Excellent Integration */}
+                  <div className=" sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
+                    <h3 className="text-xl sm:text-[20px] md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight mb-2 lg:mr-4">
+                      Excellent
+                      <br />
+                      Integration
+                    </h3>
+                    <p className="text-[12px] sm:text-lg md:text-2xl font-normal font-[Montserratmd] text-black">
+                      with Photonics System
+                    </p>
+                  </div>
+
+                  {/* Room Temperature */}
+                  <div className="p-4 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
+                    <p className="text-[12px] sm:text-lg font-normal md:text-2xl font-[Montserratmd] text-black mb-2">
+                      Operates At
+                    </p>
+                    <h3 className="text-xl sm:text-[20px]  md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight">
+                      Room
+                      <br />
+                      Temperature
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Second Row */}
+                <div className="grid grid-cols-2">
+                  {/* 2ms Spin Coherence */}
+                  <div className=" sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
+                    <h3 className="text-xl sm:text-[20px]  md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] mb-2">
+                      2ms
+                    </h3>
+                    <p className="text-[12px] sm:text-md font-normal md:text-2xl font-[Montserratmd] text-black">
+                      Spin Coherence
+                      <br />
+                      Time (T<sub>2</sub>)
+                    </p>
+                  </div>
+
+                  {/* Quantum Efficiency */}
+                  <div className="p-4 sm:p-8 lg:p-10 flex flex-col justify-center min-h-[180px] bg-white">
+                    <p className="text-[12px] sm:text-lg font-normal md:text-2xl font-[Montserratmd] text-black mb-2">
+                      Unmatched
+                    </p>
+                    <h3 className="text-xl sm:text-[20px]  md:text-[33px] font-semibold font-[Montserratmd] text-[#c5a867] leading-tight">
                       Quantum
                       <br />
                       Efficiency
