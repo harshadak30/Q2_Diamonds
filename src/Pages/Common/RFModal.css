@@ -1,23 +1,53 @@
-
-
-#rfModal {
-  overflow-y: auto;            /* allow scroll */
-  -webkit-overflow-scrolling: touch; /* smooth mobile scroll */
-  padding: 1rem;               /* avoid content touching edges */
+.popup-open {
+  overflow: hidden;
 }
 
-#rfModal > div {
-  overflow-y: auto;            /* scrollable inner area */
+
+.modal-open-body {
+  overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  #rfModal .grid {
-    grid-template-columns: 1fr; /* already there from Tailwind */
-    row-gap: 2rem;              /* spacing between stacked columns */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+}
+
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 51;
+  padding: 20px;
+}
+
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-height: 85vh;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 95vw;
+}
+
+
+@media (min-width: 768px) {
+  .modal-content {
+    max-width: 672px; /* md:max-w-3xl = 672px */
   }
-
-  #rfModal img {
-    max-width: 80%;
-    height: auto;
-  }
 }
+
